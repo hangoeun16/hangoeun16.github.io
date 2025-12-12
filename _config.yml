@@ -152,6 +152,9 @@ collections:
     output: true
   projects:
     output: true
+  lit_review:
+    output: true
+    permalink: /lit_review/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
