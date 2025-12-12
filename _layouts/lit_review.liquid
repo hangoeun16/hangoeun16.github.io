@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<!-- _layouts/lit_review.html -->
+
+{% if page._styles %}
+<!-- Page/Post custom styles -->
+<style type="text/css">
+  {{ page._styles }}
+</style>
+{% endif %}
+
+{% include scripts/mathjax_macros.html %}
+
+<!-- Bibliography section with inherited CSS styles -->
+<div class="publications">
+    {% bibliography --file summaries --query @*[id={{page.bib_id}}] %}
+</div>
+
+<div class="post">
+  <article class="post-content">
+    {% if page.toc %}
+    <div id="table-of-contents">
+      {% toc %}
+    </div>
+    <hr>
+    {% endif %}
+    
+    {{ content }}
+  </article>
+
+  <p class="post-meta">Written in {{ page.date | date: "%B %-d, %Y" }}</p>
+
+  {%- if site.giscus.repo and page.giscus_comments -%}
+    {% include giscus.liquid %}
+  {%- endif -%}
+</div>
