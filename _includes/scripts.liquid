@@ -195,32 +195,56 @@
   <script async src="https://badge.dimensions.ai/badge.js"></script>
 {% endif %}
 
+<!-- MathJax Custom Macros -->
 {% if site.enable_math %}
-  <!-- MathJax -->
-  <script
-    defer
-    type="text/javascript"
-    id="MathJax-script"
-    src="{{ site.third_party_libraries.mathjax.url.js }}"
-    integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  {% unless page.pseudocode %}
-    <script src="{{ '/assets/js/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
-    <script
-      defer
-      src="{{ site.third_party_libraries.polyfill.url.js }}"
-      crossorigin="anonymous"
-    ></script>
-  {% else %}
-    <script src="{{ '/assets/js/pseudocode-setup.js' | relative_url | bust_file_cache }}"></script>
-    <script
-      type="text/javascript"
-      src="{{ site.third_party_libraries.pseudocode.url.js }}"
-      integrity="{{ site.third_party_libraries.pseudocode.integrity.js }}"
-      crossorigin="anonymous"
-    ></script>
-  {% endunless %}
+<script type="text/javascript">
+  window.MathJax = window.MathJax || {};
+  window.MathJax.tex = window.MathJax.tex || {};
+  window.MathJax.tex.macros = Object.assign(window.MathJax.tex.macros || {}, {
+    // Number sets
+    RR: "\\mathbb{R}",
+    NN: "\\mathbb{N}",
+    ZZ: "\\mathbb{Z}",
+    QQ: "\\mathbb{Q}",
+    CC: "\\mathbb{C}",
+    
+    // Vectors and matrices
+    vec: ["\\mathbf{#1}", 1],
+    mat: ["\\mathbf{#1}", 1],
+    
+    // Probability and statistics
+    Prob: "\\mathbb{P}",
+    Expect: "\\mathbb{E}",
+    Var: "\\mathrm{Var}",
+    Cov: "\\mathrm{Cov}",
+    
+    // Calculus
+    diff: ["\\frac{d #1}{d #2}", 2],
+    pdiff: ["\\frac{\\partial #1}{\\partial #2}", 2],
+    
+    // Linear algebra
+    rank: "\\mathrm{rank}",
+    trace: "\\mathrm{tr}",
+    diag: "\\mathrm{diag}",
+    
+    // Norms
+    norm: ["\\left\\lVert #1 \\right\\rVert", 1],
+    abs: ["\\left\\lvert #1 \\right\\rvert", 1],
+    
+    // Sets
+    set: ["\\left\\{ #1 \\right\\}", 1],
+    
+    // Argmax/Argmin
+    argmax: "\\operatorname*{argmax}",
+    argmin: "\\operatorname*{argmin}",
+    
+    // Indicators
+    ind: "\\mathbb{1}",
+    
+    // Common functions
+    sgn: "\\operatorname{sgn}"
+  });
+</script>
 {% endif %}
 
 {% if site.enable_google_analytics %}
