@@ -1,0 +1,51 @@
+<!-- MathJax Custom Macros -->
+{% if site.enable_math %}
+<script type="text/javascript">
+  window.MathJax = window.MathJax || {};
+  window.MathJax.tex = window.MathJax.tex || {};
+  window.MathJax.tex.macros = Object.assign(window.MathJax.tex.macros || {}, {
+    // Number sets
+    RR: "\\mathbb{R}",
+    NN: "\\mathbb{N}",
+    ZZ: "\\mathbb{Z}",
+    QQ: "\\mathbb{Q}",
+    CC: "\\mathbb{C}",
+    
+    // Vectors and matrices
+    vec: ["\\mathbf{#1}", 1],
+    mat: ["\\mathbf{#1}", 1],
+    
+    // Probability and statistics
+    Prob: "\\mathbb{P}",
+    Expect: "\\mathbb{E}",
+    Var: "\\mathrm{Var}",
+    Cov: "\\mathrm{Cov}",
+    
+    // Calculus
+    diff: ["\\frac{d #1}{d #2}", 2],
+    pdiff: ["\\frac{\\partial #1}{\\partial #2}", 2],
+    
+    // Linear algebra
+    rank: "\\mathrm{rank}",
+    trace: "\\mathrm{tr}",
+    diag: "\\mathrm{diag}",
+    
+    // Norms
+    norm: ["\\left\\lVert #1 \\right\\rVert", 1],
+    abs: ["\\left\\lvert #1 \\right\\rvert", 1],
+    
+    // Sets
+    set: ["\\left\\{ #1 \\right\\}", 1],
+    
+    // Argmax/Argmin
+    argmax: "\\operatorname*{argmax}",
+    argmin: "\\operatorname*{argmin}",
+    
+    // Indicators
+    ind: "\\mathbb{1}",
+    
+    // Common functions
+    sgn: "\\operatorname{sgn}"
+  });
+</script>
+{% endif %}
