@@ -42,7 +42,7 @@ ninja.data = [{
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/summaries/";
+            window.location.href = "/lit_review/";
           },
         },{id: "nav-people",
           title: "people",
