@@ -9,7 +9,6 @@ nav_order: 5
 
 A light literature review of the papers that I've read in detail. 
 
-{% include scripts/mathjax_macros.html %}
 
 ---
 
