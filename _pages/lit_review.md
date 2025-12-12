@@ -13,11 +13,11 @@ A light literature review of the papers that I've read in detail.
 ---
 
 <ol>
-    {% for summary in site.summaries reversed %}
+    {% for lit_review in site.lit_review reversed %}
     <li>
-        <a href="{{ summary.url | relative_url }}">
-            ({{ summary.date | date: '%b %-d, %Y' }})
-            {{ summary.title }}
+        <a href="{{ lit_review.url | relative_url }}">
+            ({{ lit_review.date | date: '%b %-d, %Y' }})
+            {{ lit_review.title }}
         </a>
     </li>
     {% endfor %}
