@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Graduate student at the University of Chicago
 
 profile:
   align: right
@@ -11,8 +11,8 @@ profile:
   more_info: >
 
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -27,4 +27,4 @@ latest_posts:
 
 **Graduate Student at the University of Chicago**  
 
-Hello! I am **Summer (Goeun) Han**, and I am currently pursuing an **M.S. in Computational Analysis & Public Policy (MSCAPP)** at the **University of Chicago**. I earned my **B.A. in Mathematics** at **Grinnell College**.
+Hello! I am Summer (Goeun) Han, and I am currently pursuing an M.S. in Computational Analysis & Public Policy (MSCAPP) at the University of Chicago. I graduated with a B.A in Mathematics from Grinnell College (2024).
