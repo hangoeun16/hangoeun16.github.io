@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /summaries/
+permalink: /lit_review/
 title: Lit Review
 description: >
 nav: true
