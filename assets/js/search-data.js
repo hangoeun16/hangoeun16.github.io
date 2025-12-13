@@ -37,15 +37,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-creating-ssh",
+        },{id: "post-creating-ssh-key-and-connecting-to-github-for-mac-window-linux",
         
-          title: "creating ssh",
+          title: "Creating SSH key and Connecting to GitHub for mac/window/linux",
         
-        description: "First time starting a tech blog.",
+        description: "how to create local SSH key and connect the key to GitHub account",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/create_ssh_connect_git/";
+            window.location.href = "/blog/2025/creating_ssh_/";
           
         },
       },{id: "post-first-post",
