@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: creating ssh
 date: 2025-12-13
