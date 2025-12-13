@@ -17,10 +17,10 @@ These slides were originally created for the 2025 UChicago DSSI program, where I
 
   
 {% for i in (1..9) %}
+  {% capture img_path %}/assets/img/posts/sshkey/Slide{{ i }}.webp{% endcapture %}
   {% include figure.liquid
-      path="/assets/img/posts/sshkey/Slide" | append: i | append: ".webp"
+      path=img_path
       width="400px"
       class="z-depth-1"
   %}
 {% endfor %}
-    
