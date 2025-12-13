@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating SSH key and Connecting to GitHub for mac/window/linux
-date: 2025-12-12 
+date: 2025-12-13
 cover: sshkey/Slide1.webp
 cover_preview: sshkey/Slide1.webp
 
