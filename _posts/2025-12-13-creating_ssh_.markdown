@@ -12,4 +12,4 @@ toc:
   sidebar: left
 giscus_comments: true
 ---
-These slides were originally created for the 2025 UChicago DSSI program, where I worked as a teaching and program assistant
+I originally created these slides for the 2025 UChicago DSSI program, where I worked as a teaching and program assistant
