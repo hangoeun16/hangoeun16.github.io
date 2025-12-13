@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-first-post",
+        },{id: "post-creating-ssh",
+        
+          title: "creating ssh",
+        
+        description: "First time starting a tech blog.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/create_ssh_connect_git/";
+          
+        },
+      },{id: "post-first-post",
         
           title: "First Post",
         
