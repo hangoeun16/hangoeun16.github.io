@@ -1,5 +1,7 @@
 ---
 layout: post
+title: First Post
+date: 2025-12-12 
 tags: [general]
 description: >
     First time starting a tech blog. 
