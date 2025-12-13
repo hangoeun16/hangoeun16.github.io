@@ -85,7 +85,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
-
+blog_description: a collage of things that I am trying 
+permalink: /blog/:year/:title/
 
 # Pagination
 pagination:
