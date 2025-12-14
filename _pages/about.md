@@ -5,7 +5,7 @@ permalink: /
 subtitle: Graduate student at the University of Chicago
 
 profile:
-  align: right
+  align: left
   image: posts/profile/point.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
