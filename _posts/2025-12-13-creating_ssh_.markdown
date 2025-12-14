@@ -12,7 +12,7 @@ toc:
   sidebar: left
 giscus_comments: true
 ---
-I originally created these slides for the 2025 UChicago DSSI program, where I worked as a teaching and program assistant
+I originally created these slides for the 2025 [UChicago DSSI program](https://datascience.uchicago.edu/outreach/data-science-for-social-impact-network/summer-experience/2025/), where I worked as a teaching and program assistant
 
 {% include figure.liquid
     path="/assets/img/posts/ssh/Slide1.jpeg"
