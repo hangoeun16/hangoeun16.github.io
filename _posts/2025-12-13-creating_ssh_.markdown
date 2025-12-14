@@ -13,3 +13,9 @@ toc:
 giscus_comments: true
 ---
 I originally created these slides for the 2025 UChicago DSSI program, where I worked as a teaching and program assistant
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide1.jpeg"
+    width="400px"
+    class="z-depth-1"
+%}
