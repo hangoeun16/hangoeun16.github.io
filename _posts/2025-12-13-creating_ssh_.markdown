@@ -16,6 +16,54 @@ I originally created these slides for the 2025 UChicago DSSI program, where I wo
 
 {% include figure.liquid
     path="/assets/img/posts/ssh/Slide1.jpeg"
-    width="400px"
     class="z-depth-1"
 %}
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide2.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide3.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide4.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide5.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide6.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide7.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide8.jpeg"
+    class="z-depth-1"
+%}
+
+
+{% include figure.liquid
+    path="/assets/img/posts/ssh/Slide9.jpeg"
+    class="z-depth-1"
+%}
+
+
