@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Graduate student at the University of Chicago
+subtitle: Graduate Student at the University of Chicago 
 
 profile:
   align: left
@@ -24,7 +24,5 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
-**Graduate Student at the University of Chicago**  
 
 Hello! I am Summer (Goeun) Han, and I am currently pursuing an M.S. in Computational Analysis & Public Policy (MSCAPP) at the University of Chicago. I graduated with a B.A in Mathematics from Grinnell College (2024).
