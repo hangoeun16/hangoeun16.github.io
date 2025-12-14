@@ -6,8 +6,8 @@ tags: [general, tip, Git]
 description: >
      how to create local SSH key and connect the key to GitHub account 
 author: Summer Han
-cover: sshkey/Slide1.webp
-cover_preview: sshkey/Slide1.webp
+cover: /assets/img/posts/ssh/Slide1.jpeg
+cover_preview: /assets/img/posts/ssh/Slide1.jpeg
 toc:
   sidebar: left
 giscus_comments: true
