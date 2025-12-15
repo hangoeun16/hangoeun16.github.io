@@ -427,6 +427,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "lit_review-extracting-family-trees-from-literary-texts",
+          title: 'Extracting Family Trees from Literary Texts',
+          description: "",
+          section: "Lit_review",handler: () => {
+              window.location.href = "/lit_review/2025-12-12-extracting_family_trees_from_literary_texts/";
             },},{id: "lit_review-does-environmental-policy-affect-scaling-laws-between-population-and-pollution-evidence-from-american-metropolitan-areas",
           title: 'Does environmental policy affect scaling laws between population and pollution? Evidence from American...',
           description: "",
