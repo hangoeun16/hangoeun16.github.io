@@ -59,17 +59,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/first_post_/";
           
         },
-      },{id: "post-extracting-family-trees-from-literary-texts",
-        
-          title: "Extracting Family Trees from Literary Texts",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/extracting_family_trees_from_literary_texts/";
-          
-        },
       },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
