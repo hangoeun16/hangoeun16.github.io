@@ -11,5 +11,6 @@ This is a PhD-level course delivered at the University of Aalborg. The course [K
 Since the exact course code for the Aalborg version was not available, I used the course code from City, University of London.
 
 Instructor:[Ernesto Jiménez-Ruiz](https://ernestojimenezruiz.github.io/)
+
 Course found from: Knowledge Graphs Interest Group at the Alan Turing Institute's post [Teaching material relevant to KGs] (https://github.com/turing-knowledge-graphs/teaching)
 
