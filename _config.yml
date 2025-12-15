@@ -152,6 +152,9 @@ collections:
   lit_review:
     output: true
     permalink: /lit_review/:path/
+  courses:
+    output: true
+    permalink: /courses/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
