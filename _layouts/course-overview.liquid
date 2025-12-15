@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="course-overview">
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.instructor %}
+      <p class="instructor">Instructor: {{ page.instructor }}</p>
+    {% endif %}
+    {% if page.semester %}
+      <p class="semester">{{ page.semester }}</p>
+    {% endif %}
+  </header>
+
+  <article class="course-content">
+    {{ content }}
+  </article>
+
+  <!-- List all lectures in this course -->
+  {% assign course_folder = page.path | split: '/' | slice: 1 | first %}
+  {% assign lectures = site.courses | where_exp: "item", "item.path contains course_folder" | where: "type", "lecture" | sort: "date" %}
+  
+  {% if lectures.size > 0 %}
+    <section class="lecture-list">
+      <h2>Lecture Notes</h2>
+      <ol>
+        {% for lecture in lectures %}
+          <li>
+            <a href="{{ lecture.url | relative_url }}">
+              {{ lecture.title }}
+              <span class="date">({{ lecture.date | date: '%b %-d, %Y' }})</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endif %}
+</div>
