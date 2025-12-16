@@ -510,6 +510,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-the-number-of-order-2-elements-in-dihedral-group",
+          title: 'The Number of Order 2 Elements in Dihedral Group',
+          description: "proof for the number of order 2 elements in each dihedral group",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/dihedral_group/";
             },},{
         id: 'social-cv',
         title: 'CV',
