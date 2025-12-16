@@ -7,15 +7,6 @@ nav: true
 nav_order: 5
 ---
 
----
-layout: page
-permalink: /courses/
-title: courses
-description: Lecture-by-lecture reflections from courses I'm taking
-nav: true
-nav_order: 5
----
-
 {% assign courses_by_folder = site.courses | group_by_exp: "course", "course.path | split: '/' | slice: 1" %}
 
 {% for course_group in courses_by_folder %}
