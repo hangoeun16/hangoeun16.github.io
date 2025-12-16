@@ -21,8 +21,22 @@ nav_order: 5
     </h2>
     
     <div class="course-description">
-      {{ course_index.content }}
+      {{ course_index.content | markdownify }}
     </div>
+    
+    <h3>Lecture Notes</h3>
+    <ol>
+      {% for lecture in lectures %}
+        <li>
+          <a href="{{ lecture.url | relative_url }}">
+            ({{ lecture.date | date: '%b %-d, %Y' }})
+            {{ lecture.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+{% endfor %}
     
     <h3>Lecture Notes</h3>
     <ol>
