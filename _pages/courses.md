@@ -1,15 +1,10 @@
 ---
 layout: page
 permalink: /courses/
-title: Courses
-description: >
+title: courses
+description: Lecture-by-lecture reflections from courses I'm taking
 nav: true
 nav_order: 5
----
-
-A Lecture-by-lecture reflections from interesting courses 
-
-
 ---
 
 ---
