@@ -454,6 +454,11 @@ ninja.data = [{
           description: "",
           section: "Lit_review",handler: () => {
               window.location.href = "/lit_review/2025-12-14-does_environmental_policy_affect_scaling_laws/";
+            },},{id: "lit_review-what-39-s-in-a-post-how-sentiment-and-issue-salience-affect-user-39-s-emotional-reactions-on-facebook",
+          title: 'What&amp;#39;s in a post? How sentiment and issue salience affect user&amp;#39;s emotional reactions...',
+          description: "",
+          section: "Lit_review",handler: () => {
+              window.location.href = "/lit_review/2025-12-18-whats_in_a_post/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
