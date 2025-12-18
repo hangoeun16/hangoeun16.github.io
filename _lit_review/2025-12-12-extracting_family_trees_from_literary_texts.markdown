@@ -16,5 +16,22 @@ While an unhierarchical family tree is commonly represented as an undirected gra
 
 
 #### 2. Using CoreNLP for NER (3.1. Identifying characters)
+The researchers used Stanford CoreNLP for identifying characters and then matched the names by the set pattern. The patterns that it accepts are:
 
-ddddd
+{honorific} {first} {middle} {last}
+{honorific} {first} {last}
+{honorific} {last}
+{first} {middle} {last}
+{first} {last}
+{first | last} (ambiguous)
+
+I understand that these patterns derive from the fact that the researchers were dealing with literary texts mostly from classics, such as \textit{Wuthering Heights} and \textit{Romeo and Juliet}. Since this pattern seems to work best with that type of literature, it may not be easily applicable to other types of literature. Apparently, this was written more than 10 years ago, but I wonder whether using prompt engineering in this case would have worked better.
+
+#### 3. Symmetry in Relationship (3.2.1. Extensions)
+One of the potential enhancements introduced in this paper is identifying symmetric relationships. A symmetric relationship is a relationship R such that for arbitrary $a,b \in V, aRb \Rightarrow  bRa$. Actual examples are siblings and cousins. For instance, if A is a sibling of B, then B is also a sibling of A. While doing my project, I also thought identifying symmetric relationships could be helpful. Since my project's family tree was a directed graph $G = (V,E)$ where V represents each person and E represents a relationship between two people, identifying a symmetric relationship between two vertices would allow for one directional edge instead of two because $(v_1​,v_2​)$ and $(v_2,v_1)$ would be the same. However, I did not end up implementing a step to detect symmetric relationships because I had Korean family relationships in mind, and most Western symmetric relationships are not symmetric in Korea. For instance, when referring to a cousin, Koreans usually include words that identify gender and age. So, while it could be helpful in a Western family context, it might not be compatible with Korean family relationships. However, I think that using symmetric relationships and then adding attribute comparisons in each node, which might include age and gender, could be an efficient approach.
+
+### Concepts to Revisit
+
+
+### Future Plan
+Read [Extracting Signed Social Networks From Text](https://aclanthology.org/W12-4102.pdf)
