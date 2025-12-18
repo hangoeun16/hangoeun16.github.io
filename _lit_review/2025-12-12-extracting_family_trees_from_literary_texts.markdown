@@ -23,7 +23,7 @@ The researchers used Stanford CoreNLP for identifying characters and then matche
 3. {honorific} {last}
 4. {first} {middle} {last}
 5. {first} {last}
-6. {first | last} (ambiguous)
+6. {first $\mid$ last} (ambiguous)
 
 I understand that these patterns derive from the fact that the researchers were dealing with literary texts mostly from classics, such as $\textit{Wuthering Heights}$ and $\textit{Romeo and Juliet}$. Since this pattern seems to work best with that type of literature, it may not be easily applicable to other types of literature. Apparently, this was written more than 10 years ago, but I wonder whether using prompt engineering in this case would have worked better.
 
