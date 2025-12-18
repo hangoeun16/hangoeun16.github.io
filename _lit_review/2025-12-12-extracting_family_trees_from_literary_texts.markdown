@@ -30,8 +30,10 @@ I understand that these patterns derive from the fact that the researchers were 
 #### 3. Symmetry in Relationship (3.2.1. Extensions)
 One of the potential enhancements introduced in this paper is identifying symmetric relationships. A symmetric relationship is a relationship R such that for arbitrary $a,b \in V, aRb \Rightarrow  bRa$. Actual examples are siblings and cousins. For instance, if A is a sibling of B, then B is also a sibling of A. While doing my project, I also thought identifying symmetric relationships could be helpful. Since my project's family tree was a directed graph $G = (V,E)$ where V represents each person and E represents a relationship between two people, identifying a symmetric relationship between two vertices would allow for one directional edge instead of two because $(v_1​,v_2​)$ and $(v_2,v_1)$ would be the same. However, I did not end up implementing a step to detect symmetric relationships because I had Korean family relationships in mind, and most Western symmetric relationships are not symmetric in Korea. For instance, when referring to a cousin, Koreans usually include words that identify gender and age. So, while it could be helpful in a Western family context, it might not be compatible with Korean family relationships. However, I think that using symmetric relationships and then adding attribute comparisons in each node, which might include age and gender, could be an efficient approach.
 
-### Concepts to Revisit
-
+### Concepts to Revisit: Computational Ccomplexity
+The paper claims that strong compatibility is  an equivalence relation, and it takes $O(nk)$ strong compatibility checks where $n$ is the number of chains and $k$ is the number of equivalence classes. 
 
 ### Future Plan
 Read [Extracting Signed Social Networks From Text](https://aclanthology.org/W12-4102.pdf)
+Read [Stanford CoreNLP package](https://stanfordnlp.github.io/CoreNLP/) especially about ner and deterministic coreference resolver and see how it deals with place holder
+
