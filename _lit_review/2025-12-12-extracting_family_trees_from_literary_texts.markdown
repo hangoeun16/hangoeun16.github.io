@@ -34,6 +34,6 @@ One of the potential enhancements introduced in this paper is identifying symmet
 The paper claims that strong compatibility is  an equivalence relation, and it takes $O(nk)$ strong compatibility checks where $n$ is the number of chains and $k$ is the number of equivalence classes. 
 
 ### Future Plan
-Read [Extracting Signed Social Networks From Text](https://aclanthology.org/W12-4102.pdf)
-Read [Stanford CoreNLP package](https://stanfordnlp.github.io/CoreNLP/) especially about ner and deterministic coreference resolver and see how it deals with place holder
+1. Read [Extracting Signed Social Networks From Text](https://aclanthology.org/W12-4102.pdf)
+2. Read [Stanford CoreNLP package](https://stanfordnlp.github.io/CoreNLP/), focusing on ner and deterministic coreference resolver, and see how it deals with place holder
 
