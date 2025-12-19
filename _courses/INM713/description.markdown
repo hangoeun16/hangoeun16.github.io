@@ -12,7 +12,7 @@ Since the exact course code for the Aalborg version was not available, I used th
 
 Instructor: [Ernesto Jiménez-Ruiz](https://ernestojimenezruiz.github.io/)
 
-Course found from: Knowledge Graphs Interest Group at the Alan Turing Institute's post [Teaching material relevant to KGs](https://github.com/turing-knowledge-graphs/teaching)
+Course found from: Knowledge Graphs Interest Group at the Alan Turing Institute's post [Teaching material relevant to KGs](https://github.com/turing-knowledge-graphs/teaching).
 ---
 
 
