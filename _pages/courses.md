@@ -2,40 +2,60 @@
 layout: page
 permalink: /courses/
 title: courses
-description: Lecture-by-lecture notes from courses 
+description: Lecture-by-lecture notes from courses
 nav: true
 nav_order: 5
-kramdown:
-  parse_block_html: true
 ---
-{% assign courses_by_folder = site.courses
-  | group_by_exp: "course", "course.path | split: '/' | slice: 2 | first" %}
-{% for course_group in courses_by_folder %}
-  {% assign course_index = course_group.items | where: "type", "course_index" | first %}
-  {% assign lectures = course_group.items | where: "type", "lecture" | sort: "date" %}
-  
-{% if course_index %}
-<h3>
-      <a href="{{ course_index.url | relative_url }}">
-        {{ course_index.title }}
-      </a>
-</h3>
+
+{% comment %}
+Get all course index docs (one per course)
+{% endcomment %}
+{% assign course_indexes = site.courses | where: "type", "course_index" %}
+
+{% for course in course_indexes %}
+
+<h2>
+  <a href="{{ course.url | relative_url }}">
+    {{ course.title }}
+  </a>
+</h2>
+
+{% if course.instructor %}
+<p><strong>Instructor:</strong> {{ course.instructor }}</p>
+{% endif %}
+
+{% if course.semester %}
+<p>{{ course.semester }}</p>
+{% endif %}
+
+{% if course.institution %}
+<p>{{ course.institution }}</p>
+{% endif %}
+
 <div class="course-description">
-{{ course_index.content }}
+  {{ course.content }}
 </div>
 
-{% if lectures and lectures.size > 0 %}
-<h4>Lecture Notes</h4>
-      <ol>
-        {% for lecture in lectures %}
-          <li>
-            <a href="{{ lecture.url | relative_url }}">
-              ({{ lecture.date | date: '%b %-d, %Y' }})
-              {{ lecture.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ol>
-    {% endif %}
-  {% endif %}
+{% comment %}
+Now find all lectures that belong to this course by matching the `course` key
+{% endcomment %}
+{% assign lectures = site.courses
+   | where: "type", "lecture"
+   | where: "course", course.course
+   | sort: "date" %}
+
+{% if lectures.size > 0 %}
+<h3>Lecture Notes</h3>
+<ol>
+  {% for lecture in lectures %}
+  <li>
+    <a href="{{ lecture.url | relative_url }}">
+      {{ lecture.title }} ({{ lecture.date | date: "%b %-d, %Y" }})
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
+
+<hr>
 {% endfor %}
