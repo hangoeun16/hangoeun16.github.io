@@ -12,19 +12,19 @@ nav_order: 5
   {% assign course_index = course_group.items | where: "type", "course_index" | first %}
   {% assign lectures = course_group.items | where: "type", "lecture" | sort: "date" %}
   
-  {% if course_index %}
-    <h2>
+{% if course_index %}
+<h2>
       <a href="{{ course_index.url | relative_url }}">
         {{ course_index.title }}
       </a>
-    </h2>
+</h2>
 
     <div class="course-description">
       {{ course_index.content }}
     </div>
 
-    {% if lectures and lectures.size > 0 %}
-      <h3>Lecture Notes</h3>
+{% if lectures and lectures.size > 0 %}
+<h3>Lecture Notes</h3>
       <ol>
         {% for lecture in lectures %}
           <li>
