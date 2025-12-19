@@ -18,10 +18,9 @@ nav_order: 5
         {{ course_index.title }}
       </a>
 </h2>
-
-    <div class="course-description">
-      {{ course_index.content }}
-    </div>
+<div class="course-description">
+{{ course_index.content }}
+</div>
 
 {% if lectures and lectures.size > 0 %}
 <h3>Lecture Notes</h3>
