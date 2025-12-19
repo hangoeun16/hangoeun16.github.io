@@ -7,5 +7,6 @@ date: 2025-12-18
 giscus_comments: true
 ---
 
-place holder for now
+[Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
+
 
