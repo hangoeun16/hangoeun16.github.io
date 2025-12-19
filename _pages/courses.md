@@ -2,7 +2,7 @@
 layout: page
 permalink: /courses/
 title: courses
-description: Lecture-by-lecture notes from courses
+description: Lecture notes from courses
 nav: true
 nav_order: 5
 ---
@@ -11,9 +11,9 @@ nav_order: 5
 
 {% for course in course_indexes %}
 
-<h3 class="course-title">
+<h4 class="course-title">
   {{ course.title }}
-</h3>
+</h4>
 
 {% if course.instructor %}
 <p><strong>Instructor:</strong> {{ course.instructor }}</p>
@@ -36,7 +36,7 @@ nav_order: 5
    | where: "course", course.course
    | sort: "date" %}
 {% if lectures.size > 0 %}
-<h4 class="lecture-notes-title">Lecture Notes</h4>
+<h5 class="lecture-notes-title">Lecture Notes</h5>
 <ol>
   {% for lecture in lectures %}
   <li>
