@@ -2,7 +2,7 @@
 layout: course-overview
 title: "INM713: Knowledge Graphs in the Era of Large Language Models"
 type: course_index         
-course: INM713             
+course: INM713              
 instructor: "Ernesto Jiménez-Ruiz"
 semester: "April 2024"
 institution: "University of Aalborg"
@@ -16,7 +16,4 @@ Instructor: [Ernesto Jiménez-Ruiz](https://ernestojimenezruiz.github.io/)
 
 Course found from: Knowledge Graphs Interest Group at the Alan Turing Institute's post
 [Teaching material relevant to KGs](https://github.com/turing-knowledge-graphs/teaching).
-
-
-
 
