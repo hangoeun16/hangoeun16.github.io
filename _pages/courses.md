@@ -5,6 +5,8 @@ title: courses
 description: Lecture-by-lecture notes from courses 
 nav: true
 nav_order: 5
+kramdown:
+  parse_block_html: true
 ---
 {% assign courses_by_folder = site.courses
   | group_by_exp: "course", "course.path | split: '/' | slice: 2 | first" %}
