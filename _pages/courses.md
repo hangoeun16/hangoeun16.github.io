@@ -10,7 +10,8 @@ nav_order: 5
 {% assign courses_by_folder = site.courses | group_by_exp: "course", "course.path | split: '/' | slice: 1" %}
 
 {% for course_group in courses_by_folder %}
-  {% assign course_index = course_group.items | where: "type", "course_index" | first %}
+  {% assign courses_by_folder = site.courses
+  | group_by_exp: "course", "course.path | split: '/' | slice: 1 | first" %}
   {% assign lectures = course_group.items | where: "type", "lecture" | sort: "date" | reverse %}
   
   {% if course_index %}
