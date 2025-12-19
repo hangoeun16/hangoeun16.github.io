@@ -7,18 +7,13 @@ nav: true
 nav_order: 5
 ---
 
-{% comment %}
-Get all course index docs (one per course)
-{% endcomment %}
 {% assign course_indexes = site.courses | where: "type", "course_index" %}
 
 {% for course in course_indexes %}
 
-<h2>
-  <a href="{{ course.url | relative_url }}">
-    {{ course.title }}
-  </a>
-</h2>
+<h3 class="course-title">
+  {{ course.title }}
+</h3>
 
 {% if course.instructor %}
 <p><strong>Instructor:</strong> {{ course.instructor }}</p>
@@ -36,16 +31,12 @@ Get all course index docs (one per course)
   {{ course.content }}
 </div>
 
-{% comment %}
-Now find all lectures that belong to this course by matching the `course` key
-{% endcomment %}
 {% assign lectures = site.courses
    | where: "type", "lecture"
    | where: "course", course.course
    | sort: "date" %}
-
 {% if lectures.size > 0 %}
-<h3>Lecture Notes</h3>
+<h4 class="lecture-notes-title">Lecture Notes</h4>
 <ol>
   {% for lecture in lectures %}
   <li>
@@ -57,5 +48,4 @@ Now find all lectures that belong to this course by matching the `course` key
 </ol>
 {% endif %}
 
-<hr>
 {% endfor %}
