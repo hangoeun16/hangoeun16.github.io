@@ -24,6 +24,7 @@ The exemplary data graphs are directed edge-labelled (multi)graphs, property gra
 
 ##### Directed Edge-Labelled (Multi)Graphs
 {% include figure.liquid path="img/posts/KG_1/directed_edge.jpeg" width="600px" class="z-depth-1" %}
+
 As seen from the figure above, $(Ernesto,Person) \neq (Person, Ernesto),$ which makes this graph "directed."
 Also, $(Ernesto,Person) \in E$ is labeled as "teaches," which makes the graph "edge-labelled"
 
@@ -34,6 +35,7 @@ relationship: directed, named connections between two nodes.
 property: key-value pair that provides attribute
 
 {% include figure.liquid path="img/posts/KG_1/property_graph.jpeg" width="600px" class="z-depth-1" %}
+
 For instance, in the figure above, Ernesto is a node and {type: Person} is a property of Ernesto, as it gives additional information that Ernesto is a person. 
 
 
