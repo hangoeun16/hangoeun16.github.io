@@ -11,9 +11,9 @@ nav_order: 5
 
 {% for course in course_indexes %}
 
-<h4 class="course-title">
+<h5 class="course-title">
   {{ course.title }}
-</h4>
+</h5>
 
 {% if course.instructor %}
 <p><strong>Instructor:</strong> {{ course.instructor }}</p>
@@ -36,7 +36,7 @@ nav_order: 5
    | where: "course", course.course
    | sort: "date" %}
 {% if lectures.size > 0 %}
-<h5 class="lecture-notes-title">Lecture Notes</h5>
+<h6 class="lecture-notes-title">Lecture Notes</h6>
 <ol>
   {% for lecture in lectures %}
   <li>
