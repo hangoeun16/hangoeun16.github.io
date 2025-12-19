@@ -5,6 +5,7 @@ type: course_index
 instructor: Ernesto Jiménez-Ruiz
 semester: April 2024
 institution: University of Aalborg
+output: false
 ---
 ### Description
 This is a PhD-level course delivered at the University of Aalborg. The course [Knowledge Graphs in the Era of Large Language Models](https://github.com/city-knowledge-graphs/phd-course?tab=readme-ov-file) is based on [City's Semantic Web Technologies and Knowledge Graphs module](https://github.com/turing-knowledge-graphs/teaching/tree/main/city).
