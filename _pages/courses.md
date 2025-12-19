@@ -15,17 +15,17 @@ kramdown:
   {% assign lectures = course_group.items | where: "type", "lecture" | sort: "date" %}
   
 {% if course_index %}
-<h2>
+<h3>
       <a href="{{ course_index.url | relative_url }}">
         {{ course_index.title }}
       </a>
-</h2>
+</h3>
 <div class="course-description">
 {{ course_index.content }}
 </div>
 
 {% if lectures and lectures.size > 0 %}
-<h3>Lecture Notes</h3>
+<h4>Lecture Notes</h4>
       <ol>
         {% for lecture in lectures %}
           <li>
