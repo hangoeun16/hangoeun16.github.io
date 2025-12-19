@@ -6,6 +6,7 @@ description: Lecture-by-lecture reflections from courses I'm taking
 nav: true
 nav_order: 5
 ---
+<pre>{{ site.courses | inspect }}</pre>
 
 {% assign courses_by_folder = site.courses | group_by_exp: "course", "course.path | split: '/' | slice: 1" %}
 
