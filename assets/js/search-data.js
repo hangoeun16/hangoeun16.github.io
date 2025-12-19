@@ -434,16 +434,16 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "courses-introduction-to-knowledge-graphs",
-          title: 'Introduction to Knowledge Graphs',
-          description: "",
-          section: "Courses",handler: () => {
-              window.location.href = "/courses/INM713/2025-12-15-lecture-01/";
             },},{id: "courses-inm713-knowledge-graphs-in-the-era-of-large-language-models",
           title: 'INM713: Knowledge Graphs in the Era of Large Language Models',
           description: "",
           section: "Courses",handler: () => {
               window.location.href = "/courses/INM713/description/";
+            },},{id: "courses-introduction-to-knowledge-graphs",
+          title: 'Introduction to Knowledge Graphs',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/INM713/lecture-01/";
             },},{id: "lit_review-extracting-family-trees-from-literary-texts",
           title: 'Extracting Family Trees from Literary Texts',
           description: "",
