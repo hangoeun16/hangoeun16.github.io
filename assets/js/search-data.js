@@ -444,6 +444,11 @@ ninja.data = [{
           description: "",
           section: "Courses",handler: () => {
               window.location.href = "/courses/INM713/lecture-01-part1/";
+            },},{id: "courses-introduction-to-knowledge-graphs-2-owl-based-knowledge-graphs",
+          title: 'Introduction to Knowledge Graphs (2): OWL-based Knowledge Graphs',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/INM713/lecture-01-part2/";
             },},{id: "lit_review-extracting-family-trees-from-literary-texts",
           title: 'Extracting Family Trees from Literary Texts',
           description: "",
