@@ -81,6 +81,11 @@ Also, URI can be either hierarchical or opaque.
 
 While a hierarchical URI is highly human-readable (by looking at URI, you can infer that Luke work for JediDepartment in mycompany), opaque URI does not give context to infer a relationship. Still, using an opaque URI is good for privacy and less stress for upkeep. Consider a case where Luke transferred to other department. Then, if we are using hierarchical URI, we should update the URI so that other people are not mislead; however, there is no need to do such a thing for the opaque URI. 
 
+Still, there is a problem that is likely to arise for both type of URI, which is potentiality of URI being too long. When URI is long, it becomes hard to read and write, and thus cause problem. To resolve this issue we use abbreviation. 
+
+The most common abbreviation is defining prefix 
+`@prefix PREFIX_NAME: <BASE_URI/>`
+
 ### References
 1. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
 2. [About: RDF Schema](https://dbpedia.org/page/RDF_Schema)
