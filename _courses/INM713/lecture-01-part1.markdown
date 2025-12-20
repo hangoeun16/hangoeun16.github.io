@@ -101,8 +101,8 @@ A literal in RDF can be of three types:
 
 Examples:
 
-`dbr: London dbo:population "9,304,000"^^xsd:integer` $\Longleftrightarrow$ London's population is 9,304,000.
-`dbr: London rdfs:label "Londres"@es $\Longleftrightarrow$ London is called Londres in Spanish.
+1. `dbr: London dbo:population "9,304,000"^^xsd:integer` $\Longleftrightarrow$ London's population is 9,304,000.
+2. `dbr: London rdfs:label "Londres"@es $\Longleftrightarrow$ London is called Londres in Spanish.
 
 ##### Blank Nodes
 Blank nodes are resources with URI. This happens when there is a lack of information about the resource, don't have an identifier, or the node isn't important enough to warrant a URI. Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
