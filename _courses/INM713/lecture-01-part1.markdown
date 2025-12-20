@@ -26,12 +26,11 @@ The exemplary data graphs are directed edge-labelled (multi)graphs, property gra
 {% include figure.liquid path="/assets/img/posts/KG_1/directed_edge.jpeg" width="600px" %}
 
 As seen from the figure above, 
-$(Ernesto,Person) \neq (Person, Ernesto),$ which makes this graph "directed."
-Also, $(Ernesto,Person) \in E$ is labeled as "teaches," which makes the graph "edge-labelled"
+  - $(Ernesto,Person) \neq (Person, Ernesto),$ which makes the graph "directed."
+  - $(Ernesto,Person) \in E$ is labeled as "teaches," which makes the graph "edge-labelled"
 
 ##### Property Graph
 A property graph is a graph such that for each information belongs to node, relationship, or property, where
-
   - node: tagged with one or more labels and can store any number of properties
   - relationship: directed, named connections between two nodes. 
   - property: key-value pair that provides an attribute
@@ -39,6 +38,28 @@ A property graph is a graph such that for each information belongs to node, rela
 {% include figure.liquid path="/assets/img/posts/KG_1/property_graph.jpeg" width="600px" %}
 
 For instance, in the figure above, Ernesto is a node and {type: Person} is a property of Ernesto, as it gives additional information that Ernesto is a person. 
+
+#### RDF
+Resource Description Framework
+A **standardised data model** based on the **directed edge-labelled graph** model $\to$ facilitate data merging even when underlying schema differ. 
+
+($c.f.$. web page is based on vision/audio that "people" need to understand information, 
+RDF is based on framework that "computer program" can search/retrieve/analyse information.)
+
+##### RDF Graph
+RDF graph is a collection of **triples (subject, predicate, object)** which are also called as statement or fact, and 
+the relationship between subject, predicate, and object follows typical English grammar and we usually denote the relationship 
+as (subject) $\to$ (object) and use predicate to label the edge $\to.$
+
+{% include figure.liquid path="/assets/img/posts/KG_1/triples.jpeg" %}
+
+The right-side is the simple visualisation of the three triples in the left-side. Notice that ChalresIII is object in the triple (England, has king, ChalresIII) and the subject in the triple (CharlesIII, born year, 1948). It is not a problem at all, and this kind of situation frequently happens. 
+
+While subject and object are nodes of the graph, node can be 3 different kinds.
+  - resource (Internationalised/Uniform Resource Identifier): a concept that people/user/program want to describe. Unlike a blank node, it has a unique identifier.
+  - literal: value such as string, number, date
+  - blank node: a resource without unique identifier 
+
 
 
 ### References
