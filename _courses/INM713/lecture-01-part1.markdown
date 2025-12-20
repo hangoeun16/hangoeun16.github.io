@@ -129,7 +129,8 @@ Let _:b1 represent the blank node. In the figure above, there are four triples t
 2. ways to represent property graph through RDF
    
 ### References
-1. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
-2. [About: RDF Schema](https://dbpedia.org/page/RDF_Schema)
-3. [The components of a URL](https://www.ibm.com/docs/en/cics-ts/6.x?topic=concepts-components-url)
-4. [A data engineer's guide to semantic modelling](https://zenodo.org/records/3898519)
+1. [Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
+2. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
+3. [About: RDF Schema](https://dbpedia.org/page/RDF_Schema)
+4. [The components of a URL](https://www.ibm.com/docs/en/cics-ts/6.x?topic=concepts-components-url)
+5. [A data engineer's guide to semantic modelling](https://zenodo.org/records/3898519)
