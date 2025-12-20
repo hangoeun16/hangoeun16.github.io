@@ -90,11 +90,42 @@ The most common way to abbreviate URIs is by defining a prefix:
 This means that we will replace <BASE_URI/> with PREFIX_NAME. For example, if we define `@prefix dbr: <http://dbpedia.org/resource/>`, we can now write `http://dbpedia.org/resource/London` $\to$ `dbr:London`. This shortened format is called a CURI (Compact URI) or QName (Qualified Name).
 
 ##### Literal
-Literals are used to represent data values. 
+Literals are used to represent data values, and it can only appear in object position of a triple. This is beause literals are just values.
+
 A literal in RDF can be of three types:
   - lexical form: simply saying a string type. always inside quotation (e.g. "London")
   - datatype IRI: specific IRI to indicate data type (e.g. ^^xsd:integer)
   - language tag: a two or three character code indicating language based on BCP 47 specification (e.g. "en")
+
+Examples:
+`dbr: London dbo:population "9,304,000"^^xsd:integer` 
+> London's population is 9,304,000, an integer value.
+
+`dbr: London rdfs:label "Londres"@es 
+> London is called Londres in Spanish.
+
+##### Blank Nodes
+Blank nodes are resources with URI. This happens when there is a lack of information about the resource, don't have an identifier, or the node isn't important enough to warrant a URI. Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
+
+{% include figure.liquid path="/assets/img/posts/KG_1/blank_node.jpeg" %}
+
+Let _:b1 represent the blank node. In the figure above, there are four triples total where _:b1 appears as the object once and as the subject three times:
+1. (dbr:City_UoL, dbo:address, _:b1)
+2. (_:b1, dbo:street, "Northampton Square")
+3. (_:b1, dbo:place, "London")
+4. (_:b1, dbo:postcode, "EC1V OHB")
+
+| What we know about `_:b1` | What we do not know  about `_:b1` |
+|---------------------------------|----------------------------------------|
+| It is a resource/object in the RDF graph. | We don't know URI  |
+| It is the `dbo:address` of `dbr:City_UoL`. | We cannot reference it outside the graph. |
+| It has properties: street, place, postcode. | We cannot tell if it is the same as a node in another graph. |
+| It holds values like `"London"` and a postcode. | We don't know its real identity or name.|
+| It exists only within the current RDF graph. | We don't know if it represents a unique real-world resource. |
+
+
+### Something to Add
+1. representing `dbr: London dbo:population "9,304,000"^^xsd:integer` and `dbr: London rdfs:label "Londres"@es in the graph.
 
 ### References
 1. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
