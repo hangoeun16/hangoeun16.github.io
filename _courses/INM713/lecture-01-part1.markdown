@@ -68,7 +68,8 @@ URI is a string of characters that identify particular resource, following the p
 
 {% include figure.liquid path="/assets/img/posts/KG_1/youtube_link.jpeg" %}
 
-URI generally follows the structure: `scheme:\[//authority\]path\[?query\]\[#fragment\](in brackets optional elements)`
+URI generally follows the structure: 
+`scheme:\[//authority\]path\[?query\]\[#fragment\](in brackets optional elements)`
   - scheme: tells how to access the resource 
   - authority: host of the resource. usually domain
   - path: specific resource in the host that the web client wants to access
@@ -122,6 +123,7 @@ Let _:b1 represent the blank node. In the figure above, there are four triples t
 | It has properties: street, place, postcode. | We cannot tell if it is the same as a node in another graph. |
 | It holds values like `"London"` and a postcode. | We don't know its real identity or name.|
 | It exists only within the current RDF graph. | We don't know if it represents a unique real-world resource. |
+
 
 
 ### Something to Add
