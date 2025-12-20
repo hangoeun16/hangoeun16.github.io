@@ -77,7 +77,7 @@ URI generally follows the structure: scheme:\[//authority\]path\[?query\]\[#frag
 
 
 Also, URI can be either hierarchical or opaque. 
-{% include figure.liquid path="/assets/img/posts/KG_1/opqaue.jpeg" %}
+{% include figure.liquid path="/assets/img/posts/KG_1/opaque.jpeg" %}
 
 While a hierarchical URI is highly human-readable (by looking at URI, you can infer that Luke work for JediDepartment in mycompany), opaque URI does not give context to infer a relationship. Still, using an opaque URI is good for privacy and less stress for upkeep. Consider a case where Luke transferred to other department. Then, if we are using hierarchical URI, we should update the URI so that other people are not mislead; however, there is no need to do such a thing for the opaque URI. 
 
