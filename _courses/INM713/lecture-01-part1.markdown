@@ -69,6 +69,7 @@ URI is a string of characters that identify particular resource, following the p
 {% include figure.liquid path="/assets/img/posts/KG_1/youtube_link.jpeg" %}
 
 URI generally follows the structure: 
+
 `scheme:\[//authority\]path\[?query\]\[#fragment\](in brackets optional elements)`
   - scheme: tells how to access the resource 
   - authority: host of the resource. usually domain
