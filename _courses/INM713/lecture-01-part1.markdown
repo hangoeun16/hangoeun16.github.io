@@ -60,12 +60,32 @@ While subject and object are nodes of the graph, node can be 3 different kinds.
   - literal: value such as string, number, date
   - blank node: a resource without unique identifier 
 
+##### Resource Identifier
+We can use both Uniform Resource Identifier (URI) and International Resource Identifier (IRI) to identify our resource. While URI and IRI are similar, IRI can be understood as international version of URI: URI uses ASCII and IRI uses unicode, which allows broader support. 
 
+###### URI
+URI is a string of characters that identify particular resource, following the predefined set of syntax rules.
+
+{% include figure.liquid path="/assets/img/posts/KG_1/youtube_link.jpeg" %}
+
+URI generally follows the structure: scheme:\[//authority\]path\[?query\]\[#fragment\](in brackets optional elements)
+  - scheme: tells how to access the resource 
+  - authority: host of the resource. usually domain
+  - path: specific resource in the host that the web client wants to access
+  - query: string of information that the resource can use for some purpose
+  - fragment: a subpart of a retrieved resource
+
+
+Also, URI can be either hierarchical or opaque. 
+{% include figure.liquid path="/assets/img/posts/KG_1/opqaue.jpeg" %}
+
+While a hierarchical URI is highly human-readable (by looking at URI, you can infer that Luke work for JediDepartment in mycompany), opaque URI does not give context to infer a relationship. Still, using an opaque URI is good for privacy and less stress for upkeep. Consider a case where Luke transferred to other department. Then, if we are using hierarchical URI, we should update the URI so that other people are not mislead; however, there is no need to do such a thing for the opaque URI. 
 
 ### References
 1. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
 2. [About: RDF Schema](https://dbpedia.org/page/RDF_Schema)
-3. [OWL Web Ontology Language Reference](https://www.w3.org/TR/owl-ref/)
-4. [Description Logics](https://www.cs.ox.ac.uk/people/ian.horrocks/Publications/download/2014/KrSH14.pdf)
-5. [Description Logics:ALC](https://www2.cs.sfu.ca/CourseCentral/411/jim/DL.ALC.pdf)
-6. [A data engineer's guide to semantic modelling](https://zenodo.org/records/3898519)
+3. [The components of a URL](https://www.ibm.com/docs/en/cics-ts/6.x?topic=concepts-components-url)
+4. [OWL Web Ontology Language Reference](https://www.w3.org/TR/owl-ref/)
+5. [Description Logics](https://www.cs.ox.ac.uk/people/ian.horrocks/Publications/download/2014/KrSH14.pdf)
+6. [Description Logics:ALC](https://www2.cs.sfu.ca/CourseCentral/411/jim/DL.ALC.pdf)
+7. [A data engineer's guide to semantic modelling](https://zenodo.org/records/3898519)
