@@ -83,8 +83,18 @@ While a hierarchical URI is highly human-readable (by looking at URI, you can in
 
 Still, there is a problem that is likely to arise for both type of URI, which is potentiality of URI being too long. When URI is long, it becomes hard to read and write, and thus cause problem. To resolve this issue we use abbreviation. 
 
-The most common abbreviation is defining prefix 
-`@prefix PREFIX_NAME: <BASE_URI/>`
+The most common way to abbreviate URIs is by defining a prefix:
+```
+@prefix PREFIX_NAME: <BASE_URI/>
+```
+For example, if we define `@prefix dbr: <http://dbpedia.org/resource/>`, we can now write `http://dbpedia.org/resource/London` $\to$ `dbr:London`. This shortened format is called a CURI (Compact URI) or QName (Qualified Name).
+
+##### Literal
+Literals are used to represent data values. 
+A literal in RDF can be of three types:
+  - lexical form: simply saying a string type. always inside quotation (e.g. "London")
+  - datatype IRI: specific IRI to indicate data type (e.g. ^^xsd:integer)
+  - language tag: a two or three character code indicating language based on BCP 47 specification (e.g. "en")
 
 ### References
 1. [RDF vs. Property Graphs: Choosing the Right Approach for Implementing a Knowledge Graph](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) 
