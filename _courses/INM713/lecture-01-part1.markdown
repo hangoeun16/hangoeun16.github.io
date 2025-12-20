@@ -63,7 +63,7 @@ While subject and object are nodes of the graph, node can be 3 different kinds.
 ##### Resource Identifier
 We can use both Uniform Resource Identifier (URI) and International Resource Identifier (IRI) to identify our resource. While URI and IRI are similar, IRI can be understood as international version of URI: URI uses ASCII and IRI uses unicode, which allows broader support. 
 
-###### URI
+##### URI
 URI is a string of characters that identify particular resource, following the predefined set of syntax rules.
 
 {% include figure.liquid path="/assets/img/posts/KG_1/youtube_link.jpeg" %}
