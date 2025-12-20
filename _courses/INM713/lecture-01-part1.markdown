@@ -23,7 +23,7 @@ Data graph is the foundation of any knowledge graph. Its key property includes:
 The exemplary data graphs are directed edge-labelled (multi)graphs, property graphs, heterogeneous graphs (heterogeneous information within a node), hypergraphs (edges connecting a set of nodes), hypermodes (nested graphs in a node). Among these, the first two data graphs will commonly appear in this lecture.
 
 ##### Directed Edge-Labelled (Multi)Graphs
-{% include figure.liquid path="/assets/img/posts/KG_1/directed_edge.jpeg" width="600px" class="z-depth-1" %}
+{% include figure.liquid path="/assets/img/posts/KG_1/directed_edge.jpeg" width="600px" %}
 
 As seen from the figure above, 
 $(Ernesto,Person) \neq (Person, Ernesto),$ which makes this graph "directed."
@@ -36,7 +36,7 @@ A property graph is a graph such that for each information belongs to node, rela
   - relationship: directed, named connections between two nodes. 
   - property: key-value pair that provides an attribute
 
-{% include figure.liquid path="/assets/img/posts/KG_1/property_graph.jpeg" width="600px" class="z-depth-1" %}
+{% include figure.liquid path="/assets/img/posts/KG_1/property_graph.jpeg" width="600px" %}
 
 For instance, in the figure above, Ernesto is a node and {type: Person} is a property of Ernesto, as it gives additional information that Ernesto is a person. 
 
