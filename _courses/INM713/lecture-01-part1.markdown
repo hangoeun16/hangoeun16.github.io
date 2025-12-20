@@ -87,7 +87,7 @@ The most common way to abbreviate URIs is by defining a prefix:
 ```
 @prefix PREFIX_NAME: <BASE_URI/>
 ```
-For example, if we define `@prefix dbr: <http://dbpedia.org/resource/>`, we can now write `http://dbpedia.org/resource/London` $\to$ `dbr:London`. This shortened format is called a CURI (Compact URI) or QName (Qualified Name).
+This means that we will replace <BASE_URI/> with PREFIX_NAME. For example, if we define `@prefix dbr: <http://dbpedia.org/resource/>`, we can now write `http://dbpedia.org/resource/London` $\to$ `dbr:London`. This shortened format is called a CURI (Compact URI) or QName (Qualified Name).
 
 ##### Literal
 Literals are used to represent data values. 
