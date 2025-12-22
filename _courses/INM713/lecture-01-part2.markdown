@@ -24,8 +24,7 @@ Semantics <$\text{london^{I}}, \text{england^{I}}$> $\in$ $\text{location}^{I}$
 |-------|----------------|----------|
 | Storage | :london :location :england | edge from london to england labeled location |
 | Logic | location(london, england) | london and england satisfy the location relation |
-| Representation | $\langle \text{london}^I, \text{england}^I \rangle \in \text{location}^I$
- | In this interpretation, London-England pair belongs to location relationships |
+| Representation | $\langle \text{london}^I, \text{england}^I \rangle \in \text{location}^I$ | In this interpretation, London-England pair belongs to location relationships |
 
 ### References
 1. [Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
