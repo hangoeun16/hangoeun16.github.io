@@ -20,9 +20,11 @@ KG Triples :london :location :england
 DL Syntax: location (london, england)
 Semantics <$\text{london^{I}}, \text{england^{I}}$> $\in$ $\text{location}^{I}$
 
-First, the KG Triples
-DL Syntax mean that 
-Semantic means that 
+| Layer | Representation | Reads as |
+|-------|----------------|----------|
+| Storage | :london :location :england | edge from london to england labeled location |
+| Logic | location(london, england) | london and england satisfy the location relation |
+| Representation | ⟨london^I, england^I⟩ ∈ location^I | In this interpretation, London-England pair belongs to location relationships |
 
 ### References
 1. [Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
