@@ -57,8 +57,8 @@ The right-side is the simple visualisation of the three triples in the left-side
 
 While subject and object are nodes of the graph, node can be 3 different kinds.
   - resource (Internationalised/Uniform Resource Identifier): a concept that people/user/program want to describe. Unlike a blank node, it has a unique identifier.
-  - literal: value such as string, number, date
-  - blank node: a resource without unique identifier 
+  - literal: a value of certain type such as string, number, date
+  - blank node: a resource without unique identifier (annonymous) 
 
 #### Resource Identifier
 We can use both Uniform Resource Identifier (URI) and International Resource Identifier (IRI) to identify our resource. While URI and IRI are similar, IRI can be understood as international version of URI: URI uses ASCII and IRI uses unicode, which allows broader support. 
@@ -105,7 +105,7 @@ Examples:
 2. `dbr: London rdfs:label "Londres"@es` $\Longleftrightarrow$ London is called Londres in Spanish.
 
 #### Blank Nodes
-Blank nodes are resources with URI. This happens when there is a lack of information about the resource, don't have an identifier, or the node isn't important enough to warrant a URI. Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
+Blank nodes are resources with URI. Since there is no identifier, there is no way to refer them outside of the context that they are originally introduced. Blank nodes can appear in graph when there is a lack of information about the resource, don't have an identifier, or the node isn't important enough to warrant a URI. Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
 
 {% include figure.liquid path="/assets/img/posts/KG_1/blank_node.jpeg" caption="Source: Lecture Slide"%}
 
