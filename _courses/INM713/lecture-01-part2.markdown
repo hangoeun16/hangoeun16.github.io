@@ -14,7 +14,15 @@ toc:
 Note: This is my own interpretation based on self-study of the lecture slides. While I've tried to be accurate, some of my commentary and understanding may be imperfect. 
 
 #### Ontology
-Data graph is the founda
+
+Consider the first example. 
+KG Triples :london :location :england
+DL Syntax: location (london, england)
+Semantics <$\text{london^{I}}, \text{england^{I}}$> $\in$ $\text{location}^{I}$
+
+First, the KG Triples
+DL Syntax mean that 
+Semantic means that 
 
 ### References
 1. [Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
