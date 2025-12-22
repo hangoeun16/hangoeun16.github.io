@@ -134,3 +134,4 @@ Let _:b1 represent the blank node. In the figure above, there are four triples t
 3. [About: RDF Schema](https://dbpedia.org/page/RDF_Schema)
 4. [The components of a URL](https://www.ibm.com/docs/en/cics-ts/6.x?topic=concepts-components-url)
 5. [A data engineer's guide to semantic modelling](https://zenodo.org/records/3898519)
+6. [CS520: 2021 Knowledge Graphs Seminar Session 3](https://www.youtube.com/watch?v=fJLCCmk0-ok)
