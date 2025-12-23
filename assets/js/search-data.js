@@ -439,11 +439,6 @@ ninja.data = [{
           description: "",
           section: "Courses",handler: () => {
               window.location.href = "/courses/CS520/description/";
-            },},{id: "courses-inm713-knowledge-graphs-in-the-era-of-large-language-models",
-          title: 'INM713: Knowledge Graphs in the Era of Large Language Models',
-          description: "",
-          section: "Courses",handler: () => {
-              window.location.href = "/courses/INM713/description/";
             },},{id: "courses-introduction-to-knowledge-graphs-1-rdf-based-knowledge-graphs",
           title: 'Introduction to Knowledge Graphs (1): RDF-based Knowledge Graphs',
           description: "",
@@ -459,6 +454,16 @@ ninja.data = [{
           description: "",
           section: "Courses",handler: () => {
               window.location.href = "/courses/INM713/lecture-02-part1/";
+            },},{id: "courses-3-how-to-design-the-schema-of-a-knowledge-graph",
+          title: '3. How to design the schema of a Knowledge Graph?',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/CS520/lecture-03/";
+            },},{id: "courses-inm713-knowledge-graphs-in-the-era-of-large-language-models",
+          title: 'INM713: Knowledge Graphs in the Era of Large Language Models',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/INM713/description/";
             },},{id: "lit_review-extracting-family-trees-from-literary-texts",
           title: 'Extracting Family Trees from Literary Texts',
           description: "",
