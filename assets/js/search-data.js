@@ -449,6 +449,11 @@ ninja.data = [{
           description: "",
           section: "Courses",handler: () => {
               window.location.href = "/courses/INM713/lecture-01-part2/";
+            },},{id: "courses-reasoning-and-querying-with-knowledge-graphs-1-sparql-query-language-for-rdf-based-kgs",
+          title: 'Reasoning and Querying with Knowledge Graphs (1): SPARQL Query Language for RDF-based KGs...',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/INM713/lecture-02-part1/";
             },},{id: "lit_review-extracting-family-trees-from-literary-texts",
           title: 'Extracting Family Trees from Literary Texts',
           description: "",
