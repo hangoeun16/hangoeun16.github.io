@@ -434,6 +434,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "courses-cs520-knowledge-graph",
+          title: 'CS520: Knowledge Graph',
+          description: "",
+          section: "Courses",handler: () => {
+              window.location.href = "/courses/CS520/description/";
             },},{id: "courses-inm713-knowledge-graphs-in-the-era-of-large-language-models",
           title: 'INM713: Knowledge Graphs in the Era of Large Language Models',
           description: "",
