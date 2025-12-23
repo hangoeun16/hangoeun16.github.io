@@ -8,6 +8,5 @@ instructor: Ernesto Jiménez-Ruiz
 This is a PhD-level course delivered at the University of Aalborg. [The course](https://github.com/city-knowledge-graphs/phd-course?tab=readme-ov-file) is based on [City's Semantic Web Technologies and Knowledge Graphs module](https://github.com/turing-knowledge-graphs/teaching/tree/main/city).
 Since the exact course code for the Aalborg version was not available, I used the course code from City, University of London.
 
-Course found from: Knowledge Graphs Interest Group at the Alan Turing Institute's post
-[Teaching material relevant to KGs](https://github.com/turing-knowledge-graphs/teaching).
+Motivation: While looking at the website of Knowledge Graphs Interest Group at the Alan Turing Institute, I found the post [Teaching material relevant to KGs](https://github.com/turing-knowledge-graphs/teaching), which introduced this course. 
 
