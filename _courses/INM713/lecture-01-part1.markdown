@@ -33,7 +33,7 @@ As seen from the figure above,
 A property graph is a graph such that for each information belongs to node, relationship, or property, where
   - node: tagged with one or more labels and can store any number of properties
   - relationship: directed, named connections between two nodes. 
-  - property: key-value pair that provides an attribute
+  - property: key-value pair that provides an attribute (keys are strig, values can be any type)
 
 {% include figure.liquid path="/assets/img/posts/KG_1/property_graph.jpeg" width="600px" caption="Source: Lecture Slide"%}
 
@@ -55,13 +55,13 @@ as (subject) $\to$ (object) and use predicate to label the edge $\to.$
 
 The right-side is the simple visualisation of the three triples in the left-side. Notice that Charles III is object in the triple (England, has king, Charles III) and the subject in the triple (CharlesIII, born year, 1948). It is not a problem at all, and this kind of situation frequently happens. 
 
-While subject and object are nodes of the graph, node can be 3 different kinds.
-  - resource (Internationalised/Uniform Resource Identifier): a concept that people/user/program want to describe. Unlike a blank node, it has a unique identifier.
+While subject and object are nodes of the graph, node can be of 3 different types:
+  - resource with unique identifiers (Internationalised/Uniform Resource Identifier): a concept that people/user/program want to describe. Unlike a blank node, it has a unique identifier.
   - literal: a value of certain type such as string, number, date
-  - blank node: a resource without unique identifier (annonymous) 
+  - blank node: a resource without unique identifier (anonymous) 
 
 #### Resource Identifier
-We can use both Uniform Resource Identifier (URI) and International Resource Identifier (IRI) to identify our resource. While URI and IRI are similar, IRI can be understood as international version of URI: URI uses ASCII and IRI uses unicode, which allows broader support. 
+We can use both Uniform Resource Identifier (URI) and International Resource Identifier (IRI) to identify our resource. 
 
 #### URI
 URI is a string of characters that identify particular resource, following the predefined set of syntax rules.
@@ -79,7 +79,7 @@ URI generally follows the structure:
 
 
 Also, URI can be either hierarchical or opaque. 
-{% include figure.liquid path="/assets/img/posts/KG_1/opaque.jpeg" %}
+{% include figure.liquid path="/assets/img/posts/KG_1/opaque.jpeg" caption="Source: A data engineer's guide to semantic modelling"%}
 
 While a hierarchical URI is highly human-readable (by looking at URI, you can infer that Luke work for JediDepartment in mycompany), opaque URI does not give context to infer a relationship. Still, using an opaque URI is good for privacy and less stress for upkeep. Consider a case where Luke transferred to other department. Then, if we are using hierarchical URI, we should update the URI so that other people are not mislead; however, there is no need to do such a thing for the opaque URI. 
 
@@ -90,6 +90,15 @@ The most common way to abbreviate URIs is by defining a prefix:
 @prefix PREFIX_NAME: <BASE_URI/>
 ```
 This means that we will replace <BASE_URI/> with PREFIX_NAME. For example, if we define `@prefix dbr: <http://dbpedia.org/resource/>`, we can now write `http://dbpedia.org/resource/London` $\to$ `dbr:London`. This shortened format is called a CURI (Compact URI) or QName (Qualified Name).
+
+
+#### URL VS URI VS IRI
+{% include figure.liquid path="/assets/img/posts/KG_1/compare_three.jpeg" caption="Source: Knowledge Graphs Seminar Session 3"%}
+
+While URL, URI, and IRI seems similar, there are differences between them. 
+  - URL vs URI: URL $\subset$ URI such that URL must include scheme.
+  - URI vs IRI: URI uses ASCII and IRI uses character from Universal Character Set that allows foreign language character.
+
 
 #### Literal
 Literals are used to represent data values, and it can only appear in object position of a triple. This is beause literals are just values.
@@ -105,7 +114,12 @@ Examples:
 2. `dbr: London rdfs:label "Londres"@es` $\Longleftrightarrow$ London is called Londres in Spanish.
 
 #### Blank Nodes
-Blank nodes are resources with URI. Since there is no identifier, there is no way to refer them outside of the context that they are originally introduced. Blank nodes can appear in graph when there is a lack of information about the resource, don't have an identifier, or the node isn't important enough to warrant a URI. Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
+Blank nodes are resources with URI. Since there is no identifier, there is no way to refer them outside of the context that they are originally introduced. Blank nodes can appear in graph for multiple reasons such as 
+  - when we want to represent structured information
+  - there is a lack of information about the resource
+  - the node isn't important enough to warrant a URI.
+
+Also, blank node can appear in subject and object of triples; however, it cannot appear as predicate position because it will be "too meaningless" and confusing. 
 
 {% include figure.liquid path="/assets/img/posts/KG_1/blank_node.jpeg" caption="Source: Lecture Slide"%}
 
@@ -123,10 +137,21 @@ Let _:b1 represent the blank node. In the figure above, there are four triples t
 | It holds values like `"London"` and a postcode. | We don't know its real identity or name.|
 | It exists only within the current RDF graph. | We don't know if it represents a unique real-world resource. |
 
+#### RDF Dataset
+RDF dataset is a collection of RDF graphs with 
+  - exactly one default graph
+  - one or more named graphs (used to group multiple disconnected graphs)
+
+#### RDF vs Property Graph
+The basic differences are:
+  - property graph model supports edge properties.
+  - property graph model does not require IRI
+  - property graph model does not support blank nodes. 
 
 ### Things to Add
 1. representing `dbr: London dbo:population "9,304,000"^^xsd:integer` and `dbr: London rdfs:label "Londres"@es in the graph.
 2. ways to represent property graph through RDF
+3. reification
    
 ### References
 1. [Lecture Slide](https://github.com/city-knowledge-graphs/phd-course/blob/main/lectures/phd-course-kgs-aalborg-session-1-intro.pdf)
