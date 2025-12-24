@@ -90,7 +90,8 @@ To do so, we follow these steps:
 
 {% include figure.liquid path="/assets/img/posts/CS520/lec3/nary.jpeg" width="600px" caption="Source: Lecture Slide. edited using Procreate"%}
 
-The figure above shows how property graph deals with non-binary relationship. First, we create an object `Between`. Next we create object `X`, `Y`, and `Z`. Next, we introduce relationship `has_object'  `has_between` and `has_between` that connect `Between` with `X` `Y`  `Z` respectively.
+The figure above shows how property graph deals with non-binary relationship. First, we create an object `Between`. Next we create object `X`, `Y`, and `Z`. Next, we introduce relationship `has_object` `has_between` and `has_between` that connect `Between` with `X` `Y` `Z` respectively.
+
 
 
 
