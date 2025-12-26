@@ -16,6 +16,11 @@ toc:
 Note: This is my personal interpretation based on self-study of the lecture slides, notes, videos, and supplementary external resources. As a self-learner without formal enrollment or instructor feedback, my understanding, commentary, and connections between sources may be inaccurate or incomplete. 
 Please refer to the official course materials for authoritative content.
 
+When creating a knowledge graph from data, we typically face two types of issues, which are:
+  1. schema mapping problem:  determining how data elements from a new data source should be added to knowledge graph
+  2. record linkage problem: inferring if the two entities in the data may be the same real world entity.
+
+#### Schema Mapping
 
 
 
