@@ -19,5 +19,12 @@ DL ontologies are based on three building blocks:
 
 Each of these terms is similar to uniary predicates, binary predicates, and constants of FOL, respectively.
 
+- DL ontology
+  - fully describes situation (x)
+  - consists of set of statements (o)
+    - = axioms
+
+**axiom** is a set of statement such that it captures *partial* knowledge about described situation.
+It is generally separated into three types. 
 
 {% include figure.liquid path="/assets/img/posts/DL/axiom.jpeg" %}
