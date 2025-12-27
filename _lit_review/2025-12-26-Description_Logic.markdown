@@ -11,3 +11,13 @@ While working through the [Introduction to Knowledge Graphs](https://github.com/
 
 ### Introduction
 ### Basic Building Blocks of DL Ontologies
+{% include figure.liquid path="/assets/img/posts/DL/dl.jpeg" %}
+DL ontologies are based on three building blocks:
+  1. concepts: set of individuals $\rightarrow$ Mother: set of all mothers
+  2. roles: binary relationship between individuals  $\rightarrow$ parentOf: relationship between parent and their children
+  3. individual names: represent single individuals in the domain  $\rightarrow$ julia: an individual Julia
+
+Each of these terms is similar to uniary predicates, binary predicates, and constants of FOL, respectively.
+
+
+{% include figure.liquid path="/assets/img/posts/DL/axiom.jpeg" %}
