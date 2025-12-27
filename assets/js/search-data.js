@@ -484,6 +484,11 @@ ninja.data = [{
           description: "",
           section: "Lit_review",handler: () => {
               window.location.href = "/lit_review/2025-12-18-whats_in_a_post/";
+            },},{id: "lit_review-a-description-logic-primer",
+          title: 'A Description Logic Primer',
+          description: "",
+          section: "Lit_review",handler: () => {
+              window.location.href = "/lit_review/2025-12-26-Description_Logic/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
