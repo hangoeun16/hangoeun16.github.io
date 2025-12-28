@@ -30,8 +30,8 @@ It is generally separated into three types.
 
 ### Asserting Facts with ABox Axioms
 ABox axiom: capture knowledge about named individual.
-1. where ind. belong to &rightarrow; concept assertion $rightarrow$ Mother(Julia)
-2. ind.'s mutual rel $rightarrow$ role assertion $rightarrow$ parentOf(julia, john)
+1. where ind. belong to &rightarrow; concept assertion $\rightarrow$ Mother(Julia)
+2. ind.'s mutual rel $rightarrow$ role assertion $\rightarrow$ parentOf(julia, john)
 
 ### References
 1. [12.7.2 Unique Names Assumption](https://artint.info/html1e/ArtInt_302.html)
