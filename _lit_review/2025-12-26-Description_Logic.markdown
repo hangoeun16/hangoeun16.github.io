@@ -29,10 +29,8 @@ It is generally separated into three types.
 {% include figure.liquid path="/assets/img/posts/DL/axiom.jpeg" %}
 
 ### Asserting Facts with ABox Axioms
-ABox axiom : capture knowledge about named individual .
-                     ~~~~~~~~~
-                     |
-                     +-> 1. where ind. belong to   -> concept assertion -> Mother(Julia)
-                     +-> 2. ind.'s mutual rel .    -> role assertion        -> parentOf ( julia , john )
+ABox axiom : capture **knowledge** about named individual .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. where ind. belong to &rightarrow; concept assertion &rightarrow; Mother(Julia)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. ind.'s mutual rel . &rightarrow; role assertion &rightarrow; parentOf ( julia , john )
 ### References
 1. [12.7.2 Unique Names Assumption](https://artint.info/html1e/ArtInt_302.html)
