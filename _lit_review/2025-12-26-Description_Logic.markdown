@@ -51,6 +51,7 @@ For example,
 The two simple TBox axioms are concept inclusion and concept equivalence. 
 
 *Concept inclusion axioms* asserts one concept is a subconcept of the other.
+
 Consider `Mother $\sqsubseteeq$ Parent`:
   - natural language: all mothers are parents.
   - precise description: a concept Mother is *subsumed* by the concept Parent.
@@ -58,6 +59,7 @@ Consider `Mother $\sqsubseteeq$ Parent`:
 So, if we know `Mother(julia)` and `Mother $\sqsubseteeq$ Parent' we can infer that `Parent(julia)` in other words, Julia is a parent. Notice that this ability to infer from the existing information is the characteristics of DL.
 
 *Concept equivalence axioms* asserts two concepts have same instances.
+
 Consider `Person $\equiv$ Human`:
   - natural language: all persons are human and vice versa.
   - precise description: a concept Person is *equivalent* to the concept Human.
