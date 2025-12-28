@@ -38,6 +38,7 @@ It is generally separated into three types.
 | Mother(julia)      | Julia is a mother       | individual *named* julia is an *instance* of the *concept* Mother|
 | parentOf(julia, john)  | Julia is a parent of John    | individal *named* julia is the relation that is *represented* by parentOf to the individual *named* john|
 
+
 Here, we should also consider that Julia and John are not different individuals. Intuitively, they are different individuals. However, we cannot simply assume that they are different individuals based on the axiom `parentOf(julia, john)`. This is because most DLs does not make *unique name assumption.*
 &emsp unique name assumption: different name $\Longrightarrow$ different individual
 
