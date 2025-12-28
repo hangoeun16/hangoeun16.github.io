@@ -56,7 +56,7 @@ Consider `Mother ⊆ Parent`:
   - natural language: all mothers are parents.
   - precise description: a concept Mother is *subsumed* by the concept Parent.
 
-So, if we know `Mother(julia)` and `Mother ⊆ Parent' we can infer that `Parent(julia)` in other words, Julia is a parent. Notice that this ability to infer from the existing information is the characteristics of DL.
+So, if we know `Mother(julia)` and `Mother ⊆ Parent` we can infer that `Parent(julia)` in other words, Julia is a parent. Notice that this ability to infer from the existing information is the characteristics of DL.
 
 *Concept equivalence axioms* asserts two concepts have same instances.
 
