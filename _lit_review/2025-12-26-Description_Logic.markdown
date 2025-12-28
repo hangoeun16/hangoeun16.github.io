@@ -41,9 +41,7 @@ It is generally separated into three types.
 
 Here, we should also consider that Julia and John are not different individuals. Intuitively, they are different individuals. However, we cannot simply assume that they are different individuals based on the axiom `parentOf(julia, john)`. This is because most DLs does not make *unique name assumption* (different name $\Longrightarrow$ different individual).
 
-What we need to guarantee that unique name assumption is *individual inequality assertion*.
-&emsp individual inequality assertion ($\not\approx$).
-This is functionally opposite of *individual equality assertion* ($\approx$).
+What we need to guarantee that unique name assumption is *individual inequality assertion* ($\not\approx$). This is functionally opposite of *individual equality assertion* ($\approx$).
 
 For example,
   - julia $\not\approx$ john: Julia and John are different individuals.
