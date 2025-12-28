@@ -33,11 +33,10 @@ It is generally separated into three types.
 1. where ind. belong to: concept assertion $\rightarrow$ Mother(julia)
 2. ind.'s mutual rel: role assertion $\rightarrow$ parentOf(julia, john)
 
-| ABox Axiom      | Natural Language Interpretation| Precise Interpretation|
-| ----------- | ----------- |----------- |
-| Mother(julia)      | Julia is a mother       | individual *named* julia is an *instance* of the *concept* Mother|
-| parentOf(julia, john)  | Julia is a parent of John    | individal *named* julia is the relation that is *represented* by parentOf to the individual *named* john|
-
+| ABox Axiom | Natural Language Interpretation | Precise Interpretation |
+| ---------- | ------------------------------- | ---------------------- |
+| Mother(julia) | Julia is a mother | individual *named* julia is an *instance* of the *concept* Mother |
+| parentOf(julia, john) | Julia is a parent of John | individual *named* julia is related by parentOf to the individual *named* john |
 
 Here, we should also consider that Julia and John are not different individuals. Intuitively, they are different individuals. However, we cannot simply assume that they are different individuals based on the axiom `parentOf(julia, john)`. This is because most DLs does not make *unique name assumption* (different name $\Longrightarrow$ different individual).
 
@@ -47,6 +46,25 @@ For example,
   - julia $\not\approx$ john: Julia and John are different individuals.
   - julia $\approx$ john: Julia and John refer to the same individual. 
 
+### Expressing Terminological Knowledge with TBox Axioms
+**TBox axiom**: describe relationships between concepts (set of individuals).
+The two simple TBox axioms are concept inclusion and concept equivalence. 
+
+*Concept inclusion axioms* asserts one concept is a subconcept of the other.
+Consider `Mother $\sqsubseteeq$ Parent`:
+  - natural language: all mothers are parents.
+  - precise description: a concept Mother is *subsumed* by the concept Parent.
+
+So, if we know `Mother(julia)` and `Mother $\sqsubseteeq$ Parent' we can infer that `Parent(julia)` in other words, Julia is a parent. Notice that this ability to infer from the existing information is the characteristics of DL.
+
+*Concept equivalence axioms* asserts two concepts have same instances.
+Consider `Person $\equiv$ Human`:
+  - natural language: all persons are human and vice versa.
+  - precise description: a concept Person is *equivalent* to the concept Human.
+
+While these TBox axioms are useful, there are many complex relationships. So, we employ other complex concept expressions. 
+
+#### Boolean Concept Constructors
 
 ### References
 1. [12.7.2 Unique Names Assumption](https://artint.info/html1e/ArtInt_302.html)
