@@ -33,7 +33,7 @@ It is generally separated into three types.
 1. where ind. belong to: concept assertion $\rightarrow$ Mother(julia)
 2. ind.'s mutual rel: role assertion $\rightarrow$ parentOf(julia, john)
 
-| Axiom      | Natural Language Interpretation| Precise Interpretation|
+| ABox Axiom      | Natural Language Interpretation| Precise Interpretation|
 | ----------- | ----------- |----------- |
 | Mother(julia)      | Julia is a mother       | individual *named* julia is an *instance* of the *concept* Mother|
 | parentOf(julia, john)  | Julia is a parent of John    | individal *named* julia is the relation that is *represented* by parentOf to the individual *named* john|
