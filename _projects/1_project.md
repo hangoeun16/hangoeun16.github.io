@@ -1,14 +1,13 @@
 ---
-layout: page
-title: The Number of Order 2 Elements in Dihedral Group
-description:" This paper was submitted as the final project of Grinnell College's MAT 321: Group Theory course and advised by Dr. Hazel."
-img: /assets/img/multiplication_table_for_D3.png
-importance: 1
-category: work
-related_publications: true
-related_publications: true
-redirect_to: /assets/pdf/MAT_321__final_project.pdf
+layout: none
 ---
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=/assets/pdf/MAT_321__final_project.pdf">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>Redirecting to PDF... If you are not redirected, <a href="/assets/pdf/MAT_321__final_project.pdf">click here</a>.</p>
+</body>
+</html>
