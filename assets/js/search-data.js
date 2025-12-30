@@ -516,8 +516,8 @@ ninja.data = [{
           description: "proof for the number of order 2 elements in each dihedral group",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
-            },},{id: "projects-the-number-of-order-2-elements-in-dihedral-group",
-          title: 'The Number of Order 2 Elements in Dihedral Group',
+            },},{id: "projects-1-project",
+          title: '1_project',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
