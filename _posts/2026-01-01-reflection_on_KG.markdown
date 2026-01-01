@@ -50,3 +50,13 @@ Kgraph_chatbot/
     └── index.html: UI of the chatbot
 ```
 
+### Remaining Issues
+-  random shutdown issue: When a session has been open for more than 7 to 8 minutes, the programme slightly breaks (it appears as though pixels are broken at the edge of the chat UI) and performance decreases. While this could be a problem with my laptop or some other aspect of the code construction, I plan to investigate further.
+-  place holder and conflict detection issue: While it works most of the time, the placeholder sometimes fails when used alongside conflict detection. Since this occurs randomly, I would like to investigate further to pinpoint the specific condition where the error occurs. 
+
+### Future Plan
+- identifying efficient prompt size: While I didn't want to hardcode all possible family relationships and attributes, I also wanted to avoid long prompts due to computational cost and speed concerns. My initial approach to response generation was to use NER to identify relevant nodes whenever a user asked a question, then examine the edges. By gathering relevant nodes and edges to create context, the chatbot would generate a response. However, this approach didn't work well—both accuracy and computational efficiency were poor. Balancing prompt length while effectively utilising the graph's structure will be my next goal. 
+
+- Visualising nodes and edges used for chat responses: This idea stemmed from the arXiv paper "Agentigraph: An interactive knowledge graph platform for LLM-based chatbots utilising private data." While using a graph helps generate responses, creating an interactive visualisation provides users with more information and credibility. Based on this idea, I thought that displaying the edges and nodes used to generate each chat response alongside the response itself could add credibility to the answer and make users more engaged.
+
+- creating a hierarchical family tree: While all my previous attempts have failed, I still want to resolve this issue. My current plan is to train a model by providing examples of hierarchical family trees and their corresponding family relations, then apply that separate programme to this project. 
