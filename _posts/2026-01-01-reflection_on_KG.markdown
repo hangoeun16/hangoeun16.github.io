@@ -63,13 +63,13 @@ replace it the actual name when user provides.
 ### Structure
 ```
 Kgraph_chatbot/
-├── app.py: Flask web app hosting the web page
-├── chatbot.py: chatbot class 
-├── knowledge_graph.py: stores information from the chat in a graph 
-├── content_moderator.py: content safety checking
-├── README.md: description of the program
+├── app.py - Flask web app hosting the web page
+├── chatbot.py - chatbot class 
+├── knowledge_graph.py - stores information from the chat in a graph 
+├── content_moderator.py - content safety checking
+├── README.md - description of the programme
 └── templates/
-    └── index.html: UI of the chatbot
+    └── index.html - UI of the chatbot
 ```
 
 ### Attempted Approaches Not in the Final Version
