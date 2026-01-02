@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-not-yet",
+        },{id: "post-reflection-on-genai-final-project-kgraph-chatbot",
+        
+          title: "Reflection on GenAI Final Project KGraph Chatbot",
+        
+        description: "what I have succeeded, what I will improve, what I have learned",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/reflection_on_KG/";
+          
+        },
+      },{id: "post-not-yet",
         
           title: "not yet",
         
@@ -66,9 +77,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/creating_ssh_/";
           
         },
-      },{id: "post-first-post",
+      },{id: "post-first-technical-blog",
         
-          title: "First Post",
+          title: "First Technical Blog",
         
         description: "First time starting a tech blog.",
         section: "Posts",
