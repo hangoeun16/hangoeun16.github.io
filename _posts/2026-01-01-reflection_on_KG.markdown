@@ -29,6 +29,24 @@ This broadened the use of the graph and eventually led to this project.
 - Visualises an unhierarchical family tree as an interactive graph
 - Moderates using OpenAI's Moderation API
  
+### Demo
+#### Main Interface
+{% include figure.liquid path="/assets/img/posts/reflection/main_page.jpeg" %}
+The chatbot interface with chat area, graph visualisation button (tree icon), and cache clear button (bin icon)*
+
+### Example Conversation 
+{% include figure.liquid path="/assets/img/posts/reflection/conv1.png" %}
+The chatbot acts like regular conversational chatbot when user gives non-family relationship related input.
+
+### Knowledge Graph Visualisation
+
+Interactive graph showing family connections extracted from the conversation*
+
+### Conflict Detection in Action
+
+The system detecting and flagging conflicting information*
+
+
 ### What Features does KGraph Chatbot have?
 - Family extraction: Automatically extracts family relationships such as spouse, parent, child, etc.
 - Attribute extraction: Automatically extracts attributes such as age, occupation, personality, etc. 
