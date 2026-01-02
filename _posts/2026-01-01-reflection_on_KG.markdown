@@ -32,19 +32,23 @@ This broadened the use of the graph and eventually led to this project.
 ### Demo
 #### Main Interface
 {% include figure.liquid path="/assets/img/posts/reflection/main_page.jpeg" %}
-The chatbot interface with chat area, graph visualisation button (tree icon), and cache clear button (bin icon)*
+*The chatbot interface showing the chat area, graph visualisation button (tree icon), and cache clear button (bin icon).*
 
-### Example Conversation 
+#### Example Conversation 
 {% include figure.liquid path="/assets/img/posts/reflection/conv1.png" %}
-The chatbot acts like regular conversational chatbot when user gives non-family relationship related input.
+*The chatbot responds like a regular conversational assistant when the user provides input unrelated to family relationships.*
 
-### Knowledge Graph Visualisation
+#### Knowledge Graph Visualisation
+{% include figure.liquid path="/assets/img/posts/reflection/demo_visualisation.jpeg" %}
+*When the user states that Kim and Jim are married, the system creates a graph where Kim and Jim are represented as nodes connected by an edge labelled 'spouse'.*
 
-Interactive graph showing family connections extracted from the conversation*
+#### Placeholder Naming
+{% include figure.liquid path="/assets/img/posts/reflection/demo_placeholder.jpeg" %}
+*When the user doesn't provide enough information (e.g., "my sister likes chocolate"), the programme creates a placeholder node that can be replaced later when the actual name is provided.*
 
-### Conflict Detection in Action
-
-The system detecting and flagging conflicting information*
+#### Conflict Detection in Action
+{% include figure.liquid path="/assets/img/posts/reflection/demo_conflict_detection.jpeg" %}
+*Initially, the user stated Kim has three children. When the user later says Kim has two children, the programme detects the conflicting information and flags it for clarification.*
 
 
 ### What Features does KGraph Chatbot have?
