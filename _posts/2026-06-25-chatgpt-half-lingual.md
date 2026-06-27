@@ -15,9 +15,10 @@ giscus_comments: true
 In fall 2025, something changed.
  
 I run long Korean conversations in ChatGPT. Character-driven, narrative sessions that often pass 200 turns. I'd done this since March without issue. Then, around late September, Japanese started showing up in my Korean output. Not full sentences. Not code-switching. Single words, partial characters, script fragments slipping into otherwise fluent Korean.
- 
+
 I didn't collect these systematically. I just screenshotted the ones that caught my eye, thinking I'd look into it later. 
 I found 12 on my phone. They fall into three patterns.
+
 ---
  
 ## Pattern 1: Sino-Korean Word → Japanese Kanji (1:1 Mapping)
