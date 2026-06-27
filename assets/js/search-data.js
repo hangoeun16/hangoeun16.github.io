@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-reflection-on-genai-final-project-kgraph-chatbot",
+        },{id: "post-2025-sep-oct-my-chatgpt-went-0-5-lingual",
+        
+          title: "2025 Sep–Oct: My ChatGPT Went 0.5-Lingual",
+        
+        description: "In fall 2025, my Korean ChatGPT conversations started leaking Japanese. Here are the patterns I found across 12 examples.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/chatgpt-half-lingual/";
+          
+        },
+      },{id: "post-reflection-on-genai-final-project-kgraph-chatbot",
         
           title: "Reflection on GenAI Final Project KGraph Chatbot",
         
