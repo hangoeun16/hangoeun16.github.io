@@ -6,7 +6,7 @@ subtitle: narrative AI · long-horizon LLM analysis · KR/EN
 
 profile:
   align: left
-  image: posts/profile/point.jpeg
+  image: posts/profile/point.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
 
