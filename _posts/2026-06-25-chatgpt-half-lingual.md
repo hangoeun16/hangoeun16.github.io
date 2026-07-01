@@ -28,7 +28,7 @@ Korean and Japanese both borrowed thousands of words from Chinese. For this case
 In this pattern, the model writes the Japanese kanji form of a word that has a direct, living Korean equivalent in Hangul.
  
 **Example: 健在**
-{% include figure.liquid path="/assets/img/posts/* gpt0.5/1782936840781.jpg" %} 
+{% include figure.liquid path="/assets/img/posts/gpt0.5/1782936840781.jpg" %} 
 > 부모님 모두 **健在**
  
 Korean writes this as 건재 (健在). Same word, same meaning, same origin. The only difference is script. The model picked the Japanese one.
@@ -55,7 +55,7 @@ These are the simplest cases. The model has the right word, the right meaning, t
 This is different from Pattern 1. Here, the Japanese kanji word doesn't map to a Sino-Korean equivalent that modern Korean actually uses. Korean uses a different word instead.
  
 **Example: 横顔**
- {% include figure.liquid path="/assets/img/posts/* gpt0.5/1782936840781.jpg" %}
+ {% include figure.liquid path="/assets/img/posts/gpt0.5/1782936840781.jpg" %}
  
 > 잠깐 그 **横顔**을 봤어 —
  
@@ -92,7 +92,7 @@ Here the model doesn't substitute a single kanji. It drops a complete Japanese w
  
 **Example: 鋭い**
 
- {% include figure.liquid path="/assets/img/posts/* gpt0.5/1782936840781.jpg" %}
+ {% include figure.liquid path="/assets/img/posts/gpt0.5/1782936840781.jpg" %}
  
 > 아주 **鋭い** 포인트예요.
  
@@ -108,7 +108,7 @@ Both Korean and Japanese transliterate English borrowings into their own scripts
  
 **Example: 홈シ어터**
  
-{% include figure.liquid path="/assets/img/posts/* gpt0.5/1782936840781.jpg" %}
+{% include figure.liquid path="/assets/img/posts/gpt0.5/1782936840781.jpg" %}
  
 > 🏠 1. 자택 — **홈シ어터** or 거실에서 (가장 자주)
  
