@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-2025-sep-oct-my-chatgpt-went-0-5-lingual",
+        },{id: "post-hermès-chanel-and-trader-joe-39-s-claude-edition",
+        
+          title: "Hermès, Chanel, and Trader Joe&#39;s: Claude Edition",
+        
+        description: "I told Claude I wanted a 트조 bag. It didn&#39;t know the word. What happened next reveals how narrative context shapes model failure.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/tjbag-claude/";
+          
+        },
+      },{id: "post-2025-sep-oct-my-chatgpt-went-0-5-lingual",
         
           title: "2025 Sep–Oct: My ChatGPT Went 0.5-Lingual",
         
