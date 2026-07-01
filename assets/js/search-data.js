@@ -66,11 +66,11 @@ ninja.data = [{
             window.location.href = "/blog/2026/chatgpt-half-lingual/";
           
         },
-      },{id: "post-reflection-on-genai-final-project-kgraph-chatbot",
+      },{id: "post-reflection-on-genai-final-project-kingraph-chatbot",
         
-          title: "Reflection on GenAI Final Project KGraph Chatbot",
+          title: "Reflection on GenAI Final Project — KinGraph Chatbot",
         
-        description: "what I have succeeded, what I will improve, what I have learned",
+        description: "A technical reflection on building KinGraph, an LLM-powered knowledge graph chatbot — design decisions, attempted approaches, and lessons learned.",
         section: "Posts",
         handler: () => {
           
