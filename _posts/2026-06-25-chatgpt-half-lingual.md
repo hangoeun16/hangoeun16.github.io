@@ -92,7 +92,7 @@ Here the model doesn't substitute a single kanji. It drops a complete Japanese w
  
 **Example: 鋭い**
 
- {% include figure.liquid path="/assets/img/posts/gpt0.5/1782936840781.jpg" %}
+ {% include figure.liquid path="/assets/img/posts/gpt0.5/1782936849603.jpg" %}
  
 > 아주 **鋭い** 포인트예요.
  
