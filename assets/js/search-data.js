@@ -44,11 +44,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-hermès-chanel-and-trader-joe-39-s-claude-edition",
+        },{id: "post-when-claude-can-39-t-ask-the-트조-가방-problem",
         
-          title: "Hermès, Chanel, and Trader Joe&#39;s: Claude Edition",
+          title: "When Claude Can&#39;t Ask: The 트조 가방 Problem",
         
-        description: "I told Claude I wanted a 트조 bag. It didn&#39;t know the word. What happened next reveals how narrative context shapes model failure.",
+        description: "I told Claude I wanted a 트조 bag. It didn&#39;t know the word — but couldn&#39;t ask, because it was in character. What happened next reveals how narrative constraints turn comprehension failures into confident worldbuilding.",
         section: "Posts",
         handler: () => {
           
