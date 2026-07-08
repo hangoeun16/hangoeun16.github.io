@@ -4,7 +4,7 @@ title: "When Grok Googles It: The 트조 가방 Problem, Part 2"
 subtitle: "It found the right answer and still couldn't ask which one"
 date: 2026-07-07
 categories: [character-drift]
-tags: [grok, xai, korean, unknown-input, narrative-rp, web-search, slang, repair-avoidance, cross-model]
+tags: [grok, xai, korean, unknown-input, narrative-generation, web-search, slang, repair-avoidance, cross-model]
 description: "Grok searched the web, correctly identified Trader Joe's, and still didn't ask the user which bag they meant. The character just bought all of them."
 author: Summer Han
 toc:
