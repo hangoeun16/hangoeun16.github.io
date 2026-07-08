@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/lit_review/";
           },
-        },{id: "post-when-claude-can-39-t-ask-the-트조-가방-problem",
+        },{id: "post-when-grok-googles-it-the-트조-가방-problem-part-2",
+        
+          title: "When Grok Googles It: The 트조 가방 Problem, Part 2",
+        
+        description: "Grok searched the web, correctly identified Trader Joe&#39;s, and still didn&#39;t ask the user which bag they meant. The character just bought all of them.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/tjbag-grok/";
+          
+        },
+      },{id: "post-when-claude-can-39-t-ask-the-트조-가방-problem",
         
           title: "When Claude Can&#39;t Ask: The 트조 가방 Problem",
         
