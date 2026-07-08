@@ -4,7 +4,7 @@ title: "When Claude Can't Ask: The 트조 가방 Problem"
 subtitle: "How narrative mode turns 'I don't know' into a $3 tote with a waitlist"
 date: 2026-06-30
 categories: [character-drift]
-tags: [claude, anthropic, korean, unknown-input, narrative-rp, extended-thinking, slang, repair-avoidance]
+tags: [claude, anthropic, korean, unknown-input, narrative-generation, extended-thinking, slang, repair-avoidance]
 description: "I told Claude I wanted a 트조 bag. It didn't know the word — but couldn't ask, because it was in character. What happened next reveals how narrative constraints turn comprehension failures into confident worldbuilding."
 author: Summer Han
 toc:
@@ -28,7 +28,7 @@ In conversation analysis, there's a well-studied mechanism called **repair**: wh
 
 LLMs do this all the time in standard chat mode. Ask Claude something ambiguous and it will often say *"Could you clarify what you mean by X?"* This is the model initiating repair. It's a safe, cooperative move.
 
-But narrative role-play structurally blocks this. The model is voicing a character. The character can ask "트조가 뭔데?" — and Claude's character did — but that's **diegetic repair**: a character asking within the fiction. It doesn't resolve the **model's** confusion, because the answer has to come from the user's next turn, which hasn't happened yet. The model still needs to generate the current turn *now*, including how the character reacts, what the character does, and what the scene looks like.
+But collaborative narrative generation structurally blocks this. The model is voicing a character. The character can ask "트조가 뭔데?" — and Claude's character did — but that's **diegetic repair**: a character asking within the fiction. It doesn't resolve the **model's** confusion, because the answer has to come from the user's next turn, which hasn't happened yet. The model still needs to generate the current turn *now*, including how the character reacts, what the character does, and what the scene looks like.
 
 The model can't pause generation and say, as itself: *"I don't recognize 트조. Is this a brand name? A slang term? A typo?"* That would break the frame. In Goffman's terms, it would be a **frame break** — the performer stepping out of the performance to address the audience directly. Some models do this anyway (and users generally dislike it). Claude, in this case, chose to stay in character.
 
@@ -38,7 +38,7 @@ So the model faced a structural bind. It had an unresolved reference. It couldn'
 
 ## The Setup
 
-This happened mid-session in a long Korean narrative conversation. The character — a real estate developer — had been established over dozens of turns. His personality was defined. His knowledge gaps were defined. He only knew two luxury brands: Hermès and Chanel.
+This happened mid-session in a long Korean conversation — not traditional roleplay, but collaborative narrative generation where I set character profiles and let the model write scenes. The character — a real estate developer — had been established over dozens of turns. His personality was defined. His knowledge gaps were defined. He only knew two luxury brands: Hermès and Chanel.
 
 My prompt: 내가 트조 가방 갖고싶다고 하면 — "What happens if I say I want a 트조 bag?"
 
@@ -245,7 +245,7 @@ The model's options were:
 
 | Strategy | Outcome |
 |---|---|
-| Break frame and ask | Correct, but destroys immersion. Users in long RP sessions consistently report disliking this. |
+| Break frame and ask | Correct, but destroys immersion. Users in long narrative sessions consistently report disliking this. |
 | Guess a specific brand | High risk of being obviously wrong. Naming "Goyard" when the user means Trader Joe's is worse than being vague. |
 | Write around it | The referent stays unresolved, but the scene works. If the user notices, they can correct. If they don't, the story continues. |
 
@@ -257,7 +257,7 @@ The problem is that "might never be caught" means the error compounds silently. 
 
 ## The Control: Same Model, No Character
 
-To test whether this was a narrative-mode problem or a knowledge problem, I ran the same input in a plain chat session. No character. No RP. Just me and Claude.
+To test whether this was a narrative-mode problem or a knowledge problem, I ran the same input in a plain chat session. No character. No story. Just me and Claude.
 
 "트조가방이 갖고 싶어." — "I want a 트조 bag."
 
