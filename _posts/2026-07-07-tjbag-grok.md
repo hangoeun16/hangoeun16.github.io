@@ -12,7 +12,7 @@ toc:
 giscus_comments: true
 ---
 
-This is a sequel to [When Claude Can't Ask: The 트조 가방 Problem](/blog/2026/claude-trader-joe-bag/). Read that first.
+This is a sequel to [When Claude Can't Ask: The 트조 가방 Problem](/blog/2026/tjbag-claude/). Read that first.
 
 The short version: I told Claude I wanted a 트조 bag (트조 = Trader Joe's, a $3 canvas tote). Claude didn't know the word, couldn't ask because it was in character, and built a luxury handbag acquisition scene instead. I called the failure mode **repair-blocked confabulation**.
 
@@ -26,6 +26,8 @@ The starting point was identical. I exported the character profile from Claude a
 
 Prompt: "내가 트조 가방 갖고싶다고 하면" — "What happens if I say I want a 트조 bag?"
 
+![Grok Round 1: globe icons with plain internal process](/assets/img/posts/tj/grok_round1.png)
+
 Grok Round 1 — no web search, internal reasoning only — produced the same category of failure. The model locked onto luxury fashion without considering alternatives. Same prior, same result. Where Claude and Grok differed was not in *whether* they failed, but in *how* they covered for it.
 
 Claude went vague. It never named a brand, never gave a price, built the scene entirely around character dynamics. Grok went specific: New York/London/Milan stores, "최신 컬렉션" — "latest collection," and a price estimate of 10-30 million won ($7,000-$21,000). Same wrong answer, opposite strategies. Claude minimized exposure. Grok maximized confidence.
@@ -36,9 +38,9 @@ But the interesting finding came from Round 2.
 
 ## Round 2: Search Finds the Answer
 
-For the second prompt, I asked Grok to detail the purchase process. This time, web search triggered.
+For the second prompt, I asked Grok to detail the purchase process, which was one of the suggested follow-up prompt from Grok.  This time, web search triggered.
 
-![Grok Round 2: globe icons with actual web searches](/assets/img/posts/tj/grok_round2_thinking.png)
+![Grok Round 2: globe icons with actual web searches](/assets/img/posts/tj/grok_round2.png)
 
 Three queries: "트조 가방" → "트조 bag luxury brand" → "\"트조\" 가방 OR handbag OR purse." The results came back with Coupang listings, Naver blog posts, Instagram haul videos. All Trader Joe's canvas totes, $2.99 to $3.99.
 
