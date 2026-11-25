@@ -21,7 +21,7 @@
           <span class="card-text"><span>{{ p.description | default: p.excerpt | strip_html | truncatewords: 60 }}</span></span>
           {%- endif -%}
           <span class="card-title">{{ p.title }}</span>
-          <span class="card-sub">{{ p.date | date: "%B %Y" | downcase }}{% if pcat %}, {{ pcat | replace: "-", " " }}{% endif %}</span>
+          <span class="card-sub">{{ p.date | date: "%B %Y" }}{% if pcat %}, {{ pcat | replace: "-", " " }}{% endif %}</span>
         </a>
       {%- endif -%}
     {%- endfor -%}
