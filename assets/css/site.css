@@ -2,34 +2,34 @@
 
 /* Fonts are self-hosted. Licenses: assets/fonts/*-OFL.txt */
 @font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("../fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2");
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400 900;
+  font-weight: 100 900;
   font-display: swap;
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("../fonts/schibsted-grotesk-latin-ext-wght-normal.woff2") format("woff2");
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-ext-wght-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400 900;
+  font-weight: 100 900;
   font-display: swap;
   unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 @font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("../fonts/schibsted-grotesk-latin-wght-italic.woff2") format("woff2");
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-wght-italic.woff2") format("woff2");
   font-style: italic;
-  font-weight: 400 900;
+  font-weight: 100 900;
   font-display: swap;
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("../fonts/schibsted-grotesk-latin-ext-wght-italic.woff2") format("woff2");
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/hanken-grotesk-latin-ext-wght-italic.woff2") format("woff2");
   font-style: italic;
-  font-weight: 400 900;
+  font-weight: 100 900;
   font-display: swap;
   unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
@@ -39,7 +39,7 @@
   src: url("../fonts/SUIT-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
-  size-adjust: 95%; /* Hangul sits a touch large next to Schibsted */
+  size-adjust: 95%; /* Hangul sits a touch large next to Hanken */
 }
 
 :root {
@@ -48,7 +48,7 @@
   --muted: #6F685D;
   --line: #E6DBC2;
   --tint: #F3E8CC;
-  --font: "Schibsted Grotesk", "SUIT Variable", system-ui, sans-serif;
+  --font: "Hanken Grotesk", "SUIT Variable", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -77,17 +77,19 @@ img { max-width: 100%; height: auto; }
 .side { flex: 0 1 220px; }
 .name { display: block; font-size: 21px; font-weight: 500; line-height: 1.3; }
 .menu {
-  margin-top: 58px;              /* name → menu: 41.25 + 16.875 */
+  margin-top: 58px;              /* name to menu: 41.25 + 16.875 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-size: 33.75px;
   line-height: 38.8125px;        /* spacing comes from line height only */
+  font-weight: 300;
+  color: #3F3E3E;
   letter-spacing: normal;
 }
 .menu a + a { margin-top: 0; }
 .menu .sub { color: var(--muted); }
-.menu .sub.first { margin-top: 38.8125px; }   /* exactly one blank line */
+.menu .sub.first { margin-top: 38.8125px; }   /* one blank line */
 .menu .sub + .sub { margin-top: 0; }
 .arrow { font-size: 0.6em; margin-left: 10px; vertical-align: 0.35em; }
 
@@ -135,6 +137,7 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 }
 .menubtn summary::-webkit-details-marker { display: none; }
 .menubtn nav {
+  font-weight: 300;
   position: absolute; right: 0; top: 64px;
   display: flex; flex-direction: column; align-items: flex-end;
   background: var(--bg); padding: 8px 4px; font-size: 24px; line-height: 1.25;
@@ -196,6 +199,32 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 
 .foot { margin-top: 72px; display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
 
+/* ---------- writing: two-column grid ---------- */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wgrid {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+  max-width: 760px;
+  margin-top: 4px;
+}
+.wcol { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+.wcol-right { padding-top: 72px; }   /* the right column starts lower */
+.wcard { display: block; }
+.wcard:hover { text-decoration: none; }
+.wimg {
+  display: block;
+  width: var(--w, 100%);
+  aspect-ratio: var(--r, 4/3);
+  object-fit: cover;
+  border-radius: 16px;
+}
+.wph { background: var(--tint); }
+.wt { display: block; margin-top: 16px; font-size: 19px; font-weight: 500; line-height: 1.35; }
+.wcard:hover .wt { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.wd { display: block; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--muted); }
+.wdate { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); }
+
 /* ---------- small screens ---------- */
 @media (max-width: 760px) {
   .wrap { padding: 24px 22px 64px; gap: 28px; }
@@ -203,6 +232,9 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
   .menu { margin-top: 18px; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; font-size: 20px; }
   .menu a + a, .menu .sub.first, .menu .sub + .sub { margin-top: 0; }
   .menu .sub { font-size: 18px; }
+  .wgrid { flex-direction: column; gap: 48px; }
+  .wcol { display: contents; }   /* one column, newest first */
+  .wimg { width: 100%; }
   .photos img, .photos img + img { width: calc(50% - 8px); }
   .photos { gap: 16px; }
   .photos img + img { margin-top: 32px; }
