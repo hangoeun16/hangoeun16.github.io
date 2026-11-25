@@ -77,18 +77,18 @@ img { max-width: 100%; height: auto; }
 .side { flex: 0 1 220px; }
 .name { display: block; font-size: 21px; font-weight: 500; line-height: 1.3; }
 .menu {
-  margin-top: 52px;
+  margin-top: 58px;              /* name → menu: 41.25 + 16.875 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 30px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-size: 33.75px;
+  line-height: 38.8125px;        /* spacing comes from line height only */
+  letter-spacing: normal;
 }
-.menu a + a { margin-top: 28px; }
-.menu .sub { font-size: 27px; color: var(--muted); }
-.menu .sub.first { margin-top: 96px; }
-.menu .sub + .sub { margin-top: 18px; }
+.menu a + a { margin-top: 0; }
+.menu .sub { color: var(--muted); }
+.menu .sub.first { margin-top: 38.8125px; }   /* exactly one blank line */
+.menu .sub + .sub { margin-top: 0; }
 .arrow { font-size: 0.6em; margin-left: 10px; vertical-align: 0.35em; }
 
 .main { flex: 999 1 560px; min-width: 0; max-width: 800px; }
