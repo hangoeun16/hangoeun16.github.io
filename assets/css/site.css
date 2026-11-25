@@ -117,6 +117,7 @@ img { max-width: 100%; height: auto; }
   line-height: 1.55;
 }
 .row .yr { color: var(--muted); font-variant-numeric: tabular-nums; }
+.row-month { grid-template-columns: 150px minmax(0, 1fr); }
 .row .t { display: block; }
 .row .d { display: block; font-size: 15px; line-height: 1.5; color: var(--muted); }
 a.row:hover { text-decoration: none; }
@@ -240,6 +241,7 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
   .photos img + img { margin-top: 32px; }
   .about { font-size: 17px; }
   .row { grid-template-columns: 72px minmax(0, 1fr); column-gap: 14px; }
+  .row-month { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
   .post-page { padding: 22px 22px 32px; }
   .menubtn { top: 14px; right: 14px; }
   .post h1 { font-size: 30px; margin-right: 44px; }
