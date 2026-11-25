@@ -1,0 +1,11 @@
+{%- for s in include.data %}
+<section class="sec">
+  <h2>{{ s.section }}</h2>
+  {%- for it in s.items %}
+  {%- if it.url %}<a class="row" href="{{ it.url | relative_url }}">{% else %}<div class="row">{% endif %}
+    <span class="yr">{{ it.year }}</span>
+    <span><span class="t">{{ it.title }}</span>{% if it.detail %}<span class="d">{{ it.detail }}</span>{% endif %}</span>
+  {%- if it.url %}</a>{% else %}</div>{% endif %}
+  {%- endfor %}
+</section>
+{%- endfor %}

@@ -1,0 +1,7 @@
+---
+layout: default
+---
+<div class="post-page" id="top">
+{%- assign pool = site.posts | where_exp: "p", "p.hidden != true" | where_exp: "p", "p.url != page.url" -%}
+{% include article.html pool=pool %}
+</div>

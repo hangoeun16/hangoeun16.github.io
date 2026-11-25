@@ -1,0 +1,11 @@
+{%- comment -%}
+  Usage (same as before):
+  {% include figure.liquid path="/assets/img/x.jpg" caption="..." width="600px" %}
+  Also accepts: citation, alt, class.
+{%- endcomment -%}
+<figure class="fig{% if include.class %} {{ include.class }}{% endif %}">
+  <img src="{{ include.path | relative_url }}" alt="{{ include.alt | default: include.caption | default: '' | escape }}" loading="lazy"{% if include.width %} style="width: {{ include.width }}; max-width: 100%"{% endif %}>
+  {%- if include.caption or include.citation %}
+  <figcaption>{{ include.caption }}{% if include.caption and include.citation %} · {% endif %}{{ include.citation }}</figcaption>
+  {%- endif %}
+</figure>

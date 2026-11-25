@@ -1,0 +1,11 @@
+{%- assign c = site.contact -%}
+{%- capture links -%}
+{%- if c.email and c.email != "" %}<a href="mailto:{{ c.email }}">email</a>|{% endif -%}
+{%- if c.linkedin and c.linkedin != "" %}<a href="{{ c.linkedin }}">linkedin</a>|{% endif -%}
+{%- if c.x and c.x != "" %}<a href="{{ c.x }}">x</a>|{% endif -%}
+{%- if c.github and c.github != "" %}<a href="{{ c.github }}">github</a>|{% endif -%}
+{%- endcapture -%}
+{%- assign parts = links | split: "|" -%}
+{%- if parts.size > 0 -%}
+<p class="{{ include.class }}">{{ parts | join: " · " }}</p>
+{%- endif -%}

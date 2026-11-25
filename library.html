@@ -1,0 +1,53 @@
+---
+layout: page
+title: library
+permalink: /library/
+---
+<h1 class="page-title">library</h1>
+
+<section class="sec">
+  <h2>reading notes</h2>
+  {%- assign reads = site.lit_review | sort: "date" | reverse -%}
+  {%- for p in reads %}
+  <a class="row" href="{{ p.url | relative_url }}">
+    <span class="yr">{{ p.date | date: "%Y.%m" }}</span>
+    <span><span class="t">{{ p.title }}</span></span>
+  </a>
+  {%- endfor %}
+</section>
+
+{%- assign courses = site.courses | where: "type", "course_index" -%}
+{%- for course in courses %}
+<section class="sec">
+  <h2>course notes · {{ course.title }}</h2>
+  {%- if course.instructor %}<p class="intro">{{ course.instructor }}</p>{% endif %}
+  {%- assign lectures = site.courses | where: "type", "lecture" | where: "course", course.course | sort: "date" -%}
+  {%- for l in lectures %}
+  <a class="row" href="{{ l.url | relative_url }}">
+    <span class="yr">{{ l.date | date: "%Y.%m" }}</span>
+    <span><span class="t">{{ l.title }}</span></span>
+  </a>
+  {%- endfor %}
+  <a class="row" href="{{ course.url | relative_url }}"><span class="yr"></span><span><span class="d">about this course →</span></span></a>
+</section>
+{%- endfor %}
+
+{%- assign indexed = courses | map: "course" -%}
+{%- capture loose_rows -%}
+  {%- for l in site.courses -%}
+    {%- if l.type == "lecture" -%}
+      {%- unless indexed contains l.course -%}
+  <a class="row" href="{{ l.url | relative_url }}">
+    <span class="yr">{{ l.date | date: "%Y.%m" }}</span>
+    <span><span class="t">{{ l.title }}</span><span class="d">{{ l.course }}</span></span>
+  </a>
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if loose_rows != "" %}
+<section class="sec">
+  <h2>other course notes</h2>
+  {{ loose_rows }}
+</section>
+{%- endif %}

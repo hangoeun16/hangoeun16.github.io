@@ -1,0 +1,33 @@
+# Work page content. "[year]" marks values still to fill in.
+
+- section: notes
+  items:
+    - year: "2025–"
+      title: Narrative AI notes
+      detail: How LLMs handle long narrative, across 1,400+ Korean-language conversations with four models.
+      url: /blog/
+
+- section: projects
+  items:
+    - year: "2026"
+      title: Clinical knowledge-graph extraction
+      detail: A 13-agent pipeline that pulls clinical information out of medical transcripts. First place, Schmidt AI in Science Hackathon.
+    - year: "[year]"
+      title: Clinical Graph-JEPA
+      detail: Co-author.
+    - year: "[year]"
+      title: KinGraph
+      detail: An LLM-powered knowledge-graph chatbot. Design decisions, failed approaches, and what stuck.
+      url: /blog/2026/reflection_on_KG/
+    - year: "[year]"
+      title: Bank fragility replication
+      detail: Jiang et al. (2024), with the FFIEC call-report pipeline extended through 2025.
+
+- section: research & consulting
+  items:
+    - year: "[year]"
+      title: Building-code enforcement in Chicago
+      detail: 311 and DOB data, absorbing Markov chains. Advised by Prof. Lawrence Hunter.
+    - year: "[year]"
+      title: UChicago Medicine
+      detail: Oncology expansion. Demand and capacity from 250+ GB of patient data.

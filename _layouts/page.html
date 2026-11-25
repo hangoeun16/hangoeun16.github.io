@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="wrap">
+  {% include sidebar.html %}
+  <main class="main{% if page.wide %} wide{% endif %}">
+    {% if page.tagline %}<p class="tagline">{{ page.tagline }}</p>{% endif %}
+    {{ content }}
+  </main>
+</div>

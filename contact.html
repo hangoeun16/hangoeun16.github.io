@@ -1,0 +1,14 @@
+---
+layout: page
+title: contact
+permalink: /contact/
+---
+<h1 class="page-title">contact</h1>
+<section class="sec">
+{%- assign c = site.contact -%}
+{%- if c.email and c.email != "" %}<a class="row" href="mailto:{{ c.email }}"><span class="yr">email</span><span><span class="t">{{ c.email }}</span></span></a>{% endif %}
+{%- if c.linkedin and c.linkedin != "" %}<a class="row" href="{{ c.linkedin }}"><span class="yr">linkedin</span><span><span class="t">{{ c.linkedin | remove: "https://" | remove: "www." }}</span></span></a>{% endif %}
+{%- if c.x and c.x != "" %}<a class="row" href="{{ c.x }}"><span class="yr">x</span><span><span class="t">{{ c.x | remove: "https://" }}</span></span></a>{% endif %}
+{%- if c.github and c.github != "" %}<a class="row" href="{{ c.github }}"><span class="yr">github</span><span><span class="t">{{ c.github | remove: "https://" }}</span></span></a>{% endif %}
+</section>
+<p class="intro">I'm happy to talk about narrative AI, Korean-language LLM behavior, or web fiction over coffee.</p>

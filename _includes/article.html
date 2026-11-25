@@ -1,0 +1,42 @@
+{%- assign m = page.date | date: "%-m" | plus: 0 -%}
+{%- if m >= 3 and m <= 5 -%}{%- assign season = "spring" -%}
+{%- elsif m >= 6 and m <= 8 -%}{%- assign season = "summer" -%}
+{%- elsif m >= 9 and m <= 11 -%}{%- assign season = "fall" -%}
+{%- else -%}{%- assign season = "winter" -%}{%- endif -%}
+{%- assign cat = page.categories | first -%}
+<details class="menubtn">
+  <summary aria-label="Menu">≡</summary>
+  <nav aria-label="Main">
+    <a href="{{ '/' | relative_url }}">about</a>
+    <a href="{{ '/work/' | relative_url }}">work</a>
+    <a href="{{ '/blog/' | relative_url }}">writing</a>
+    <a href="{{ '/library/' | relative_url }}">library</a>
+    <a class="sub first" href="{{ '/cv/' | relative_url }}">cv<span class="arrow" aria-hidden="true">↗</span></a>
+    <a class="sub" href="{{ '/contact/' | relative_url }}">contact</a>
+  </nav>
+</details>
+
+<div class="post-wrap">
+  <aside class="post-side">
+    <a class="name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="kind">{{ page.date | date: "%Y" }} {{ season }}, {{ page.kind | default: "note" }}{% if cat %} on {{ cat | replace: "-", " " }}{% endif %}</p>
+    {%- assign note = page.note | default: page.subtitle -%}
+    {%- if note %}<p class="side-note">{{ note }}</p>{% endif %}
+  </aside>
+
+  <article class="post">
+    <h1>{{ page.title }}</h1>
+    {%- if page.thumb %}<img class="thumb" src="{{ page.thumb | relative_url }}" alt="">{% endif %}
+    <div class="prose">
+      {{ content }}
+    </div>
+    <p class="colophon">{% if page.colophon %}{{ page.colophon }} {% endif %}{% if page.date %}originally published {{ page.date | date: "%B %-d, %Y" | downcase }}.{% endif %}</p>
+  </article>
+</div>
+
+{% include related.html pool=include.pool %}
+
+<footer class="foot">
+  <span>© {{ site.time | date: "%Y" }} {{ site.author }}</span>
+  <a href="#top" aria-label="Back to top">↑</a>
+</footer>

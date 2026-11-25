@@ -1,0 +1,35 @@
+{%- comment -%} include.pool: documents to choose from (already excludes the current page) {%- endcomment -%}
+{%- assign cat = page.categories | first -%}
+{%- assign shown = 0 -%}
+{%- capture cards -%}
+  {%- for pass in (1..2) -%}
+    {%- for p in include.pool -%}
+      {%- if shown >= 3 -%}{%- break -%}{%- endif -%}
+      {%- assign pcat = p.categories | first -%}
+      {%- assign same_cat = false -%}
+      {%- if cat and pcat == cat -%}{%- assign same_cat = true -%}{%- endif -%}
+      {%- if pass == 1 -%}{%- assign take = same_cat -%}
+      {%- elsif same_cat -%}{%- assign take = false -%}
+      {%- else -%}{%- assign take = true -%}{%- endif -%}
+      {%- if take -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {%- assign img = p.thumb | default: p.cover -%}
+        <a class="card" href="{{ p.url | relative_url }}">
+          {%- if img -%}
+          <span class="card-img"><img src="{{ img | relative_url }}" alt="" loading="lazy"></span>
+          {%- else -%}
+          <span class="card-text"><span>{{ p.description | default: p.excerpt | strip_html | truncatewords: 60 }}</span></span>
+          {%- endif -%}
+          <span class="card-title">{{ p.title }}</span>
+          <span class="card-sub">{{ p.date | date: "%B %Y" | downcase }}{% if pcat %}, {{ pcat | replace: "-", " " }}{% endif %}</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if shown > 0 -%}
+<section class="related">
+  <h2>related</h2>
+  <div class="cards">{{ cards }}</div>
+</section>
+{%- endif -%}

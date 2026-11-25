@@ -1,0 +1,15 @@
+---
+layout: page
+title: writing
+permalink: /blog/
+---
+<h1 class="page-title">writing</h1>
+<section class="sec">
+{%- assign visible = site.posts | where_exp: "p", "p.hidden != true" -%}
+{%- for p in visible %}
+  <a class="row" href="{{ p.url | relative_url }}">
+    <span class="yr">{{ p.date | date: "%Y.%m" }}</span>
+    <span><span class="t">{{ p.title }}</span>{% if p.description %}<span class="d">{{ p.description | strip_html | truncatewords: 32 }}</span>{% endif %}</span>
+  </a>
+{%- endfor %}
+</section>

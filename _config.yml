@@ -1,0 +1,57 @@
+title: Summer (Goeun) Han
+tagline: narrative AI · long-horizon LLM analysis · KR/EN
+description: >-
+  Summer (Goeun) Han keeps notes on how LLMs handle long narrative:
+  characters that flatten, Korean that decays into translationese,
+  timelines that lose coherence.
+author: Summer (Goeun) Han
+lang: en
+url: https://hangoeun16.github.io
+baseurl: ""
+
+# Contact. Fill these in; empty ones are hidden on the contact page.
+contact:
+  email: ""          # e.g. you@example.com
+  linkedin: ""       # full URL
+  x: ""              # full URL
+  github: https://github.com/hangoeun16
+
+# Résumé PDF for the CV page. Put the file at this path.
+resume_pdf: /assets/pdf/resume.pdf
+
+permalink: /blog/:year/:title/
+
+collections:
+  lit_review:
+    output: true
+    permalink: /lit_review/:path/
+  courses:
+    output: true
+    permalink: /courses/:path/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: lit_review }
+    values: { layout: note, kind: reading note }
+  - scope: { path: "", type: courses }
+    values: { layout: note, kind: course note }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - "**/readme.md"
+  - "**/readme.markdown"

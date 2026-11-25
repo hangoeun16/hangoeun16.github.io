@@ -1,0 +1,61 @@
+# CV page content. Edit freely; each section renders in this order.
+# "[year]" marks values still to fill in.
+
+- section: Education
+  items:
+    - year: "2026"
+      title: University of Chicago
+      detail: M.S., Computational Analysis and Public Policy
+    - year: "[year]"
+      title: Grinnell College
+      detail: B.A., Mathematics, with Statistics. GPA 3.93. Started as a Classics major.
+
+- section: Experience
+  items:
+    - year: "[year]"
+      title: Research, advised by Prof. Lawrence Hunter
+      detail: Chicago building-code enforcement from 311 and DOB data, modelled with absorbing Markov chains. Targeting ACM FAccT.
+    - year: "[year]"
+      title: UChicago Medicine, student consultant
+      detail: Oncology expansion. Analysed 250+ GB of patient data to assess demand and capacity.
+    - year: "[year]"
+      title: Data Science Institute Clinic, Promega
+      detail: Organoid image classification.
+    - year: "[year]"
+      title: Hacking for Defense
+      detail: Neuromorphic FPGA project. Led more than half of the team's stakeholder outreach.
+
+- section: Selected Projects
+  items:
+    - year: "2025–"
+      title: Narrative AI notes
+      detail: Long-horizon failure modes across 1,400+ Korean-language conversations with four LLMs.
+      url: /blog/
+    - year: "2026"
+      title: Clinical knowledge-graph extraction
+      detail: 13-agent pipeline for clinical information from medical transcripts. Composite score 0.936; evaluation work improved 39% over baseline.
+    - year: "[year]"
+      title: Clinical Graph-JEPA
+      detail: Co-author.
+    - year: "[year]"
+      title: KinGraph
+      detail: LLM-powered knowledge-graph chatbot.
+      url: /blog/2026/reflection_on_KG/
+    - year: "[year]"
+      title: Bank fragility replication
+      detail: Jiang et al. (2024), with the FFIEC call-report pipeline extended through 2025.
+
+- section: Honors & Awards
+  items:
+    - year: "2026"
+      title: First place, Schmidt AI in Science Hackathon
+    - year: "[year]"
+      title: Phi Beta Kappa, Grinnell College
+    - year: "[year]"
+      title: Sociology research accepted, American Sociological Association
+
+- section: Certifications
+  items:
+    - year: "[year]"
+      title: "[certification]"
+      detail: "[issuer]"
