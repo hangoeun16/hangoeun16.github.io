@@ -221,10 +221,10 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
   border-radius: 16px;
 }
 .wph { background: var(--tint); }
-.wt { display: block; margin-top: 16px; font-size: 19px; font-weight: 500; line-height: 1.35; }
+.wt { display: block; margin-top: 14px; font-size: 18px; font-weight: 400; line-height: 1.35; color: var(--ink); }
 .wcard:hover .wt { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.wd { display: block; margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--muted); }
-.wdate { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.wd { display: block; margin-top: 2px; font-size: 18px; line-height: 1.35; color: var(--muted); }
+.wdate { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); }
 
 /* ---------- small screens ---------- */
 @media (max-width: 760px) {
