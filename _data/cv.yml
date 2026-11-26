@@ -6,11 +6,11 @@
   items:
     - date: "2024 – 2026"
       title: University of Chicago
-      sub: M.S. Computational Analysis & Public Policy
+      sub: M.S. Computational Analysis & Public Policy, with Honors
       text: GPA 3.89/4.00 · Computer Science GPA 4.00/4.00
-    - date: ""
+    - date: "2019 – 2024"
       title: Grinnell College
-      sub: B.A. Mathematics
+      sub: B.A. Mathematics, Statistics concentration
       text: GPA 3.93/4.00 · Phi Beta Kappa
 
 - section: Experience
@@ -63,6 +63,6 @@
     - label: AI & systems
       value: PyTorch, scikit-learn, LangGraph, FastAPI, Neo4j, PostgreSQL, Docker
     - label: Certifications
-      value: "AWS Certified AI Practitioner<br>AWS Certified Cloud Practitioner"
+      value: AWS Certified AI Practitioner
     - label: Spoken languages
       value: Korean, English, Japanese (JLPT N2)
