@@ -21,6 +21,14 @@
 
   <article class="post">
     <h1>{{ page.title }}</h1>
+    {%- if page.collection == "lit_review" or page.collection == "courses" -%}
+      {%- assign lc = site.data.library.courses | where: "code", page.course | first -%}
+      {%- capture src -%}{% if page.authors or page.source %}{{ page.authors }}{% if page.source %}{% if page.authors %} · {% endif %}{{ page.source }}{% endif %}{% if page.pub_year %} · {{ page.pub_year }}{% endif %}{% elsif lc %}{{ lc.name }} · {{ lc.source }}{% endif %}{%- endcapture -%}
+      {%- assign orig = page.source_url | default: lc.url -%}
+      {%- if src != "" or orig %}
+    <p class="doc-src">{{ src }}{% if orig %}{% if src != "" %}<br>{% endif %}<a href="{{ orig }}">Original source ↗</a>{% endif %}</p>
+      {%- endif %}
+    {%- endif %}
     {%- if page.thumb %}<img class="thumb" src="{{ page.thumb | relative_url }}" alt="">{% endif %}
     <div class="prose">
       {{ content }}
@@ -29,7 +37,7 @@
   </article>
 </div>
 
-{% include related.html pool=include.pool %}
+{% if include.related == "text" %}{% include related-text.html pool=include.pool %}{% else %}{% include related.html pool=include.pool %}{% endif %}
 
 <footer class="foot">
   <span>© {{ site.time | date: "%Y" }} {{ site.author }}</span>

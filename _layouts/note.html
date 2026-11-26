@@ -8,5 +8,5 @@ layout: default
   {%- assign rest = docs | where_exp: "p", "p.course != page.course" -%}
   {%- assign docs = same | concat: rest -%}
 {%- endif -%}
-{% include article.html pool=docs %}
+{% include article.html pool=docs related="text" %}
 </div>

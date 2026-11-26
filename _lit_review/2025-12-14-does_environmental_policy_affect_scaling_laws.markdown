@@ -4,6 +4,12 @@ title: "Does environmental policy affect scaling laws between population and pol
 giscus_comments: true
 date: 2025-12-14
 bib_id: mullerenvironmental
+library_type: paper
+authors: "Nicholas Z. Muller, Akshaya Jha"
+source: "PLOS ONE"
+pub_year: "2017"
+source_url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181407"
+summary: "How air pollution and its damages scale with city size across U.S. metro areas, and how the Clean Air Act changes that curve."
 ---
 
 ### Why & How I Found This

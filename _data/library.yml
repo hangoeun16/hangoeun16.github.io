@@ -1,0 +1,15 @@
+# Lecture notes are grouped by `course:` in each note's front matter.
+# How each course is shown on the library page:
+courses:
+  - code: CS520
+    name: Knowledge Graph
+    source: Stanford University · Vinay K. Chaudhri, Naren Chittar, Michael Genesereth
+    url: https://web.stanford.edu/class/cs520/
+  - code: INM713
+    name: Knowledge Graphs in the Era of Large Language Models
+    source: City, University of London · Aalborg University · Ernesto Jiménez-Ruiz
+    url: https://github.com/city-knowledge-graphs/phd-course
+  - code: CS325
+    name: Artificial Intelligence Programming
+    source: Northwestern University · Chris Riesbeck
+    url: https://courses.cs.northwestern.edu/325/

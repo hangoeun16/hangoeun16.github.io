@@ -4,6 +4,12 @@ title: "Extracting Family Trees from Literary Texts"
 giscus_comments: true
 date: 2025-12-12
 bib_id: chin2015extracting
+library_type: paper
+authors: "Alex Chin, Evan Patterson"
+source: "Stanford CS224N final project report"
+pub_year: "2015"
+source_url: "https://nlp.stanford.edu/courses/cs224n/2015/reports/30.pdf"
+summary: "An NLP pipeline that finds the characters in a novel and links them through family relationships."
 ---
 
 ### Why & How I Found This

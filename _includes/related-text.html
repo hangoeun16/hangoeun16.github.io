@@ -1,0 +1,20 @@
+{%- comment -%} Text-only related list for library pages. include.pool: candidate documents. {%- endcomment -%}
+{%- assign shown = 0 -%}
+{%- capture rows -%}
+  {%- for p in include.pool -%}
+    {%- if shown >= 3 -%}{%- break -%}{%- endif -%}
+    {%- assign shown = shown | plus: 1 -%}
+    {%- assign c = site.data.library.courses | where: "code", p.course | first -%}
+    <a class="rel-row" href="{{ p.url | relative_url }}">
+      <span class="rel-title">{{ p.title }}</span>
+      {%- if p.authors or p.source %}<span class="rel-src">{{ p.authors }}{% if p.source %}{% if p.authors %} · {% endif %}{{ p.source }}{% endif %}{% if p.pub_year %} · {{ p.pub_year }}{% endif %}</span>
+      {%- elsif c %}<span class="rel-src">{{ c.name }}</span>{% endif %}
+    </a>
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if shown > 0 -%}
+<section class="related related-text">
+  <h2>related</h2>
+  <div class="rel-list">{{ rows }}</div>
+</section>
+{%- endif -%}

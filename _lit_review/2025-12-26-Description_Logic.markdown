@@ -4,6 +4,12 @@ title: "A Description Logic Primer"
 giscus_comments: true
 date: 2025-12-26
 bib_id: descriptionlogicprimer
+library_type: paper
+authors: "Markus Krötzsch, Frantisek Simancik, Ian Horrocks"
+source: "arXiv"
+pub_year: "2013"
+source_url: "https://arxiv.org/abs/1201.4089"
+summary: "A self-contained first introduction to description logics, from their building blocks to the logic behind OWL."
 ---
 
 ### Why & How I Found This
