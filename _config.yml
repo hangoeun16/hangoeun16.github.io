@@ -11,10 +11,10 @@ baseurl: ""
 
 # Contact. Fill these in; empty ones are hidden on the contact page.
 contact:
-  email: ""          # e.g. you@example.com
-  linkedin: ""       # full URL
-  x: ""              # full URL
-  github: https://github.com/hangoeun16
+  email: "han.goeun16@gmail.com"
+  linkedin: "https://www.linkedin.com/in/goeun-summer-han/"
+  x: ""
+  github: "https://github.com/hangoeun16"
 
 # Résumé PDF for the CV page. Put the file at this path.
 resume_pdf: /assets/pdf/resume.pdf
