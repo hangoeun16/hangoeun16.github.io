@@ -21,6 +21,7 @@
 
   <article class="post">
     <h1>{{ page.title }}</h1>
+    {%- if page.deck %}<p class="deck">{{ page.deck }}</p>{% endif %}
     {%- if page.collection == "lit_review" or page.collection == "courses" -%}
       {%- assign lc = site.data.library.courses | where: "code", page.course | first -%}
       {%- capture src -%}{% if page.authors or page.source %}{{ page.authors }}{% if page.source %}{% if page.authors %} · {% endif %}{{ page.source }}{% endif %}{% if page.pub_year %} · {{ page.pub_year }}{% endif %}{% elsif lc %}{{ lc.name }} · {{ lc.source }}{% endif %}{%- endcapture -%}

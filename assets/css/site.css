@@ -208,15 +208,17 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 .kind { margin: 2px 0 0; font-size: 17px; line-height: 1.4; color: var(--muted); }
 .side-note { margin: 24px 0 0; max-width: 300px; font-size: 13px; line-height: 1.5; color: var(--muted); }
 
-.post { flex: 999 1 560px; min-width: 0; max-width: 640px; }
+.post { flex: 999 1 560px; min-width: 0; max-width: 720px; }
+.post .deck { margin: -26px 0 38px; font-size: 24px; line-height: 1.3; font-weight: 400; letter-spacing: -0.01em; color: var(--muted); }
 .post h1 { margin: 0 0 38px; font-size: 38px; line-height: 1.15; font-weight: 400; letter-spacing: -0.015em; }
 .thumb { display: block; width: 112px; height: 112px; object-fit: cover; margin-bottom: 44px; }
 .colophon { margin: 96px 0 0; font-size: 13px; line-height: 1.5; color: #4A453D; }
 
 /* prose */
 .prose > :first-child { margin-top: 0; }
-.prose p, .prose ul, .prose ol, .prose table, .prose details, .prose pre { margin: 20px 0; }
-.prose h2 { margin: 52px 0 16px; font-size: 24px; line-height: 1.25; font-weight: 500; }
+.prose { line-height: 1.75; }
+.prose p, .prose ul, .prose ol, .prose table, .prose details, .prose pre { margin: 22px 0; }
+.prose h2 { margin: 52px 0 16px; font-size: 24px; line-height: 1.3; font-weight: 400; letter-spacing: -0.015em; }
 .prose h3 { margin: 36px 0 12px; font-size: 19px; line-height: 1.3; font-weight: 500; }
 .prose h4 { margin: 28px 0 8px; font-size: 17px; font-weight: 600; }
 .prose a { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
@@ -238,6 +240,50 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 .fig { margin: 36px 0; }
 .fig img { display: block; border-radius: 12px; margin: 0; }
 .fig figcaption, .prose img + em { display: block; margin-top: 7px; font-size: 13px; line-height: 1.4; color: var(--muted); font-style: normal; }
+
+/* ---------- editorial pieces inside posts ---------- */
+.fig-label { margin: 0 0 4px !important; font-size: 12px; line-height: 1.4; letter-spacing: 0.04em; color: var(--muted); }
+.fig-title { margin: 0 !important; font-size: 17px; line-height: 1.45; }
+.fig-sub { margin: 2px 0 0 !important; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.prose figcaption, .tbl-cap { margin-top: 10px !important; font-size: 12px; line-height: 1.5; color: var(--muted); }
+
+/* tables: no vertical lines, no header fill, faint rows */
+.tbl { margin: 40px 0; overflow-x: auto; }
+.tbl table { display: table; width: 100%; margin: 14px 0 0; border-collapse: collapse; font-size: 14.5px; line-height: 1.45; }
+.tbl th, .tbl td { padding: 11px 16px 11px 0; border: 0; border-bottom: 1px solid #E6E2D6; vertical-align: top; }
+.tbl th { font-weight: 400; font-size: 12.5px; color: var(--muted); border-bottom-color: #D4CFC3; }
+.tbl th:last-child, .tbl td:last-child { padding-right: 0; }
+.tbl td[style*="right"], .tbl th[style*="right"] { font-variant-numeric: tabular-nums; }
+
+/* charts */
+.fig-chart { margin: 44px 0; }
+.chart { display: block; width: 100%; height: auto; margin-top: 18px; overflow: visible; }
+.chart .grid { stroke: #ECE8DE; stroke-width: 1; }
+.chart .hline { stroke: #B8B2A6; stroke-width: 1; stroke-dasharray: 3 4; }
+.chart .mark { stroke: #CFCAC0; stroke-width: 1; }
+.chart .tick, .chart .note { font-size: 12.5px; fill: var(--muted); }
+.chart .end { font-size: 12.5px; }
+.chart .series { fill: none; stroke-width: 1.75; stroke-linejoin: round; stroke-linecap: round; }
+
+/* key numbers: type and space only */
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; margin: 36px 0 40px; }
+.stat-num { display: block; font-size: 56px; line-height: 1; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat-label { display: block; margin-top: 12px; font-size: 15px; line-height: 1.4; }
+.stat-sub { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+
+/* method as a definition list, sources as a reference list */
+.defs-title { margin: 0 0 14px !important; font-size: 19px; line-height: 1.3; font-weight: 500; }
+.defs { margin: 44px 0; display: grid; grid-template-columns: 120px minmax(0, 1fr); column-gap: 24px; }
+.defs .defs-title { grid-column: 1 / -1; }
+.defs dt { padding: 12px 0; border-top: 1px solid #E6E2D6; font-size: 13px; color: var(--muted); line-height: 1.6; }
+.defs dd { margin: 0; padding: 12px 0; border-top: 1px solid #E6E2D6; font-size: 15px; line-height: 1.65; }
+.refs { margin: 56px 0 0; }
+.refs ol { list-style: none; margin: 0; padding: 0; }
+.refs li { display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 12px 0; border-top: 1px solid #E6E2D6; }
+.refs li + li { margin-top: 0; }
+.ref-num { padding-top: 4px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ref-title { font-size: 16px; }
+.ref-src { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
 
 /* related */
 .related { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
@@ -283,6 +329,12 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 
 /* ---------- small screens ---------- */
 @media (max-width: 760px) {
+  .post .deck { font-size: 20px; }
+  .fig-chart { overflow-x: auto; }
+  .fig-chart .chart { min-width: 560px; }
+  .stat-num { font-size: 42px; }
+  .defs { grid-template-columns: minmax(0, 1fr); }
+  .defs dd { border-top: 0; padding-top: 0; }
   .lib-toc { padding-left: 0; }
   .cv-item { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
   .cv-item + .cv-item { margin-top: 24px; }

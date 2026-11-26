@@ -1,0 +1,41 @@
+# Chart data for the "Henry? Henzy?" post.
+# Values marked "read from chart" were measured off the original PNG charts
+# (the labelled points 69%, 32% and 39.3% matched exactly). Replace them with
+# the exact numbers from your export when you can; the charts redraw themselves.
+
+fig1:
+  labels: [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800]
+  label_every: 2
+  ymax: 100
+  yticks: [0, 25, 50, 75, 100]
+  pad_right: 46
+  x_title: message number (start of each 50-message bin)
+  hline: { value: 50, label: half of all mentions }
+  marks:
+    - { index: 5, label: "first slip, message 267" }
+    - { index: 16, label: "includes my correction at message 804", align: end }
+  series:
+    - name: Korean misspelled
+      color: "#996659"
+      # read from chart
+      values: [0, 0, 0, 0, 0, 3, 5, 6, 14, 11, 13, 16, 36, 22, 65, 69, 32]
+      end_label: "32%"
+      peak_label: { index: 15, text: "69%" }
+
+fig2:
+  labels: ["1–133", "134–200", "201–300", "301–409"]
+  label_every: 1
+  ymax: 50
+  yticks: [0, 10, 20, 30, 40, 50]
+  pad_right: 190
+  x_title: conversation turn (one message from me plus one reply)
+  series:
+    - name: English
+      color: "#A49D90"
+      values: [0, 0, 0, 0]
+      end_label: "English (Henry): 0 of 759"
+    - name: Korean
+      color: "#996659"
+      # read from chart: 5.1 and 13.4; 39.3 is from the original label
+      values: [0, 5.1, 13.4, 39.3]
+      end_label: "Korean (헨리 → 헨지): 39.3%"

@@ -1,0 +1,68 @@
+{%- comment -%}
+  Quiet line chart drawn as inline SVG, so it uses the site's fonts and colours.
+  include.c: chart data (labels, ymax, yticks, series, optional hline, marks, x_title).
+  include.label: accessible description.
+{%- endcomment -%}
+{%- assign c = include.c -%}
+{%- assign W = 680 -%}{%- assign H = 340 -%}
+{%- assign L = 44 -%}{%- assign T = 28 -%}
+{%- assign R = c.pad_right | default: 40 -%}
+{%- assign B = 56 -%}
+{%- assign pw = W | minus: L | minus: R -%}
+{%- assign ph = H | minus: T | minus: B -%}
+{%- assign n1 = c.labels.size | minus: 1 -%}
+{%- assign bottom = T | plus: ph -%}
+{%- assign ymax = c.ymax | times: 1.0 -%}
+<svg class="chart" viewBox="0 0 {{ W }} {{ H }}" role="img" aria-label="{{ include.label | escape }}">
+  {%- for t in c.yticks -%}
+    {%- assign y = t | times: ph | divided_by: ymax | minus: bottom | times: -1 %}
+  <line class="grid" x1="{{ L }}" x2="{{ W | minus: R }}" y1="{{ y }}" y2="{{ y }}"/>
+  <text class="tick" x="{{ L | minus: 10 }}" y="{{ y | plus: 4 }}" text-anchor="end">{{ t }}%</text>
+  {%- endfor %}
+  {%- if c.hline -%}
+    {%- assign y = c.hline.value | times: ph | divided_by: ymax | minus: bottom | times: -1 %}
+  <line class="hline" x1="{{ L }}" x2="{{ W | minus: R }}" y1="{{ y }}" y2="{{ y }}"/>
+  <text class="note" x="{{ L | plus: 6 }}" y="{{ y | minus: 7 }}">{{ c.hline.label }}</text>
+  {%- endif %}
+  {%- for lab in c.labels -%}
+    {%- assign i = forloop.index0 -%}
+    {%- assign every = c.label_every | default: 1 -%}
+    {%- assign rem = i | modulo: every -%}
+    {%- if rem == 0 -%}
+      {%- assign x = i | times: pw | times: 1.0 | divided_by: n1 | plus: L %}
+  <text class="tick" x="{{ x }}" y="{{ bottom | plus: 22 }}" text-anchor="middle">{{ lab }}</text>
+    {%- endif -%}
+  {%- endfor %}
+  {%- if c.x_title %}
+  <text class="note" x="{{ pw | divided_by: 2 | plus: L }}" y="{{ H | minus: 6 }}" text-anchor="middle">{{ c.x_title }}</text>
+  {%- endif %}
+  {%- for m in c.marks -%}
+    {%- assign x = m.index | times: pw | times: 1.0 | divided_by: n1 | plus: L -%}
+    {%- assign s0 = c.series | first -%}
+    {%- assign v = s0.values[m.index] -%}
+    {%- assign y = v | times: ph | divided_by: ymax | minus: bottom | times: -1 %}
+  <line class="mark" x1="{{ x }}" x2="{{ x }}" y1="{{ T | plus: 18 }}" y2="{{ y | minus: 6 }}"/>
+  <text class="note" x="{{ x }}" y="{{ T | plus: 10 }}" text-anchor="{% if m.align == 'end' %}end{% else %}middle{% endif %}">{{ m.label }}</text>
+  {%- endfor %}
+  {%- for s in c.series -%}
+    {%- capture pts -%}{%- for v in s.values -%}{%- assign i = forloop.index0 -%}{{ i | times: pw | times: 1.0 | divided_by: n1 | plus: L }},{{ v | times: ph | divided_by: ymax | minus: bottom | times: -1 }} {% endfor -%}{%- endcapture %}
+  <polyline class="series" points="{{ pts | strip }}" style="stroke: {{ s.color }}"/>
+    {%- for v in s.values -%}
+      {%- assign i = forloop.index0 -%}
+      {%- assign x = i | times: pw | times: 1.0 | divided_by: n1 | plus: L -%}
+      {%- assign y = v | times: ph | divided_by: ymax | minus: bottom | times: -1 %}
+  <circle cx="{{ x }}" cy="{{ y }}" r="2.6" style="fill: {{ s.color }}"/>
+    {%- endfor -%}
+    {%- assign lastv = s.values | last -%}
+    {%- assign ly = lastv | times: ph | divided_by: ymax | minus: bottom | times: -1 -%}
+    {%- if s.end_label %}
+  <text class="end" x="{{ W | minus: R | plus: 10 }}" y="{{ ly | plus: 4 }}" style="fill: {{ s.color }}">{{ s.end_label }}</text>
+    {%- endif -%}
+    {%- if s.peak_label -%}
+      {%- assign px = s.peak_label.index | times: pw | times: 1.0 | divided_by: n1 | plus: L -%}
+      {%- assign pv = s.values[s.peak_label.index] -%}
+      {%- assign py = pv | times: ph | divided_by: ymax | minus: bottom | times: -1 %}
+  <text class="end" x="{{ px }}" y="{{ py | minus: 10 }}" text-anchor="middle" style="fill: {{ s.color }}">{{ s.peak_label.text }}</text>
+    {%- endif -%}
+  {%- endfor %}
+</svg>
