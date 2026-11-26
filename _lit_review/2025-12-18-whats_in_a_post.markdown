@@ -5,6 +5,8 @@ giscus_comments: true
 date: 2025-12-18
 bib_id: Eberl
 library_type: paper
+hidden: true
+sitemap: false
 authors: "Jakob-Moritz Eberl, Petro Tolochko, Pablo Jost, Tobias Heidenreich, Hajo Boomgaarden"
 source: "Journal of Information Technology & Politics"
 pub_year: "2020"

@@ -5,6 +5,8 @@ giscus_comments: true
 date: 2025-12-14
 bib_id: mullerenvironmental
 library_type: paper
+hidden: true
+sitemap: false
 authors: "Nicholas Z. Muller, Akshaya Jha"
 source: "PLOS ONE"
 pub_year: "2017"

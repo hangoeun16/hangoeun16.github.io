@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post-page" id="top">
-{%- assign docs = site[page.collection] | where_exp: "p", "p.url != page.url" | where_exp: "p", "p.type != 'course_index'" | where_exp: "p", "p.date" | sort: "date" | reverse -%}
+{%- assign docs = site[page.collection] | where_exp: "p", "p.url != page.url" | where_exp: "p", "p.hidden != true" | where_exp: "p", "p.type != 'course_index'" | where_exp: "p", "p.date" | sort: "date" | reverse -%}
 {%- if page.course -%}
   {%- assign same = docs | where: "course", page.course -%}
   {%- assign rest = docs | where_exp: "p", "p.course != page.course" -%}

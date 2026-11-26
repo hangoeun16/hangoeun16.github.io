@@ -11,7 +11,7 @@ permalink: /library/
 <div class="lib">
 <h1 class="page-title">library</h1>
 
-{%- assign reads = site.lit_review | sort: "title" -%}
+{%- assign reads = site.lit_review | where_exp: "p", "p.hidden != true" | sort: "title" -%}
 {%- assign kinds = "paper:Papers,article:Articles" | split: "," -%}
 {%- for k in kinds -%}
   {%- assign key = k | split: ":" | first -%}
