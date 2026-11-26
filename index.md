@@ -28,4 +28,3 @@ That's why I pay attention to how LLMs handle long narrative. Most benchmarks te
 
 </div>
 
-{% include contact-links.html class="elsewhere" %}
