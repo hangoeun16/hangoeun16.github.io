@@ -1,61 +1,68 @@
-# CV page content. Edit freely; each section renders in this order.
-# "[year]" marks values still to fill in.
+# CV page content. Sections render in this order.
+# Entry sections: date, title, sub (one grey line), text.
+# style: prose  -> paragraphs only.   style: toolkit -> label + value rows.
 
 - section: Education
   items:
-    - year: "2026"
+    - date: "2024 – 2026"
       title: University of Chicago
-      detail: M.S., Computational Analysis and Public Policy
-    - year: "[year]"
+      sub: M.S. Computational Analysis & Public Policy
+      text: GPA 3.89/4.00 · Computer Science GPA 4.00/4.00
+    - date: ""
       title: Grinnell College
-      detail: B.A., Mathematics, with Statistics. GPA 3.93. Started as a Classics major.
+      sub: B.A. Mathematics
+      text: GPA 3.93/4.00 · Phi Beta Kappa
 
 - section: Experience
   items:
-    - year: "[year]"
-      title: Research, advised by Prof. Lawrence Hunter
-      detail: Chicago building-code enforcement from 311 and DOB data, modelled with absorbing Markov chains. Targeting ACM FAccT.
-    - year: "[year]"
-      title: UChicago Medicine, student consultant
-      detail: Oncology expansion. Analysed 250+ GB of patient data to assess demand and capacity.
-    - year: "[year]"
-      title: Data Science Institute Clinic, Promega
-      detail: Organoid image classification.
-    - year: "[year]"
-      title: Hacking for Defense
-      detail: Neuromorphic FPGA project. Led more than half of the team's stakeholder outreach.
+    - date: Summer 2026
+      title: Promega × Data Science Institute
+      sub: Applied machine learning · Industry collaboration
+      text: Built machine learning workflows for organoid quality control, integrating computer vision, temporal modeling, and an 18-step data processing pipeline. Investigated label inversion and refined model evaluation and classification thresholds.
+    - date: Winter 2026
+      title: University of Chicago Medicine
+      sub: Healthcare Analytics Lab · Visualization lead
+      text: Led visualization for oncology patient care pathways, analyzing clinical encounters, referrals, and scheduling across nine relational tables.
+    - date: Fall 2025
+      title: University of Chicago
+      sub: Teaching Assistant · Python Programming
+      text: Supported students learning Python and computational problem-solving.
 
-- section: Selected Projects
+- section: Selected projects
   items:
-    - year: "2025–"
-      title: Narrative AI notes
-      detail: Long-horizon failure modes across 1,400+ Korean-language conversations with four LLMs.
-      url: /blog/
-    - year: "2026"
-      title: Clinical knowledge-graph extraction
-      detail: 13-agent pipeline for clinical information from medical transcripts. Composite score 0.936; evaluation work improved 39% over baseline.
-    - year: "[year]"
-      title: Clinical Graph-JEPA
-      detail: Co-author.
-    - year: "[year]"
+    - date: "2025 – 2026"
       title: KinGraph
-      detail: LLM-powered knowledge-graph chatbot.
-      url: /blog/2026/reflection_on_KG/
-    - year: "[year]"
-      title: Bank fragility replication
-      detail: Jiang et al. (2024), with the FFIEC call-report pipeline extended through 2025.
+      text: A conversational AI system built around temporal knowledge graphs to represent fictional characters, relationships, and narrative events. The system uses persistent entity identities and relationship histories to support long-running conversations.
+    - date: Spring 2026
+      title: Gunmandu Party
+      text: Designed and built multi-persona AI readers for fiction writers, grounded in 804 Korean reader comments. Awarded second place at the University of Chicago’s Writing with AI poster competition.
+    - date: Summer 2026
+      title: Sure for Sure
+      text: Built an evidence-grounded medication reconciliation system with FHIR-linked claims and a human-review interface.
 
-- section: Honors & Awards
-  items:
-    - year: "2026"
-      title: First place, Schmidt AI in Science Hackathon
-    - year: "[year]"
-      title: Phi Beta Kappa, Grinnell College
-    - year: "[year]"
-      title: Sociology research accepted, American Sociological Association
+- section: Creative practice
+  style: prose
+  paragraphs:
+    - I began writing fiction in Korean narrative communities in high school, serializing stories under a pseudonym and building a readership of over 3,000 subscribers. My writing explored romance, coming of age, and character-driven narratives, including fiction set in the Harry Potter universe.
+    - In college, I continued writing and ran an independent storytelling account that grew to over 3,000 followers. Both remain under pseudonyms.
 
-- section: Certifications
+- section: Recognition
   items:
-    - year: "[year]"
-      title: "[certification]"
-      detail: "[issuer]"
+    - date: "2026"
+      title: Writing with AI — Second Place
+      sub: University of Chicago · Gunmandu Party
+    - date: ""
+      title: Phi Beta Kappa
+      sub: Grinnell College
+
+- section: Toolkit
+  style: toolkit
+  items:
+    - label: Languages
+      value: Python, SQL, R, JavaScript, Bash
+    - label: AI & systems
+      value: PyTorch, scikit-learn, LangGraph, FastAPI, Neo4j, PostgreSQL, Docker
+    - label: Certifications
+      value: "AWS Certified AI Practitioner<br>AWS Certified Cloud Practitioner"
+    - label: Spoken languages
+      value: Korean, English, Japanese (JLPT N2)

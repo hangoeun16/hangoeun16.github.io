@@ -3,10 +3,43 @@ layout: page
 title: cv
 permalink: /cv/
 ---
-<h1 class="page-title">curriculum vitae</h1>
-{% include rows.html data=site.data.cv %}
+<div class="cv">
+<h1 class="page-title">cv</h1>
 
-<section>
-  <a class="download" href="{{ site.resume_pdf | relative_url }}">Download résumé (PDF) ↓</a>
-  <p class="small">one page, for applications.</p>
+{%- for s in site.data.cv %}
+<section class="cv-sec{% if s.style %} cv-sec-{{ s.style }}{% endif %}">
+  <h2>{{ s.section }}</h2>
+
+  {%- if s.style == "prose" %}
+  <div class="cv-prose">
+    {%- for para in s.paragraphs %}<p>{{ para }}</p>{% endfor %}
+  </div>
+
+  {%- elsif s.style == "toolkit" %}
+  {%- for it in s.items %}
+  <div class="cv-item">
+    <div class="cv-date">{{ it.label }}</div>
+    <p class="cv-text">{{ it.value }}</p>
+  </div>
+  {%- endfor %}
+
+  {%- else %}
+  {%- for it in s.items %}
+  <div class="cv-item">
+    <div class="cv-date">{{ it.date }}</div>
+    <div>
+      <h3>{% if it.url %}<a href="{{ it.url | relative_url }}">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h3>
+      {%- if it.sub %}<p class="cv-sub">{{ it.sub }}</p>{% endif %}
+      {%- if it.text %}<p class="cv-text">{{ it.text }}</p>{% endif %}
+    </div>
+  </div>
+  {%- endfor %}
+  {%- endif %}
 </section>
+{%- endfor %}
+
+{%- assign pdf = site.static_files | where: "path", site.resume_pdf | first -%}
+{%- if pdf %}
+<p class="cv-download"><a href="{{ site.resume_pdf | relative_url }}">Download résumé (PDF)</a></p>
+{%- endif %}
+</div>
