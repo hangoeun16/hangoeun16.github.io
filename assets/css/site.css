@@ -133,6 +133,25 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 .download { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .small { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
 
+/* ---------- cv ---------- */
+.cv { max-width: 800px; font-size: 16px; line-height: 1.7; }
+.cv .page-title { margin-bottom: 56px; }
+.cv-sec + .cv-sec { margin-top: 32px; padding-top: 32px; border-top: 1px solid #E6E2D6; }
+.cv-sec h2 { margin: 0 0 28px; font-size: 24px; font-weight: 400; letter-spacing: -0.03em; line-height: 1.3; color: var(--ink); }
+.cv-item { display: grid; grid-template-columns: 130px minmax(0, 1fr); column-gap: 24px; }
+.cv-item + .cv-item { margin-top: 32px; }
+.cv-date { padding-top: 2px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cv h3 { margin: 0 0 2px; font-size: 17px; font-weight: 500; line-height: 1.45; letter-spacing: -0.01em; }
+.cv-sub { margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.cv-text { margin: 0; font-size: 16px; }
+.cv-prose { max-width: 600px; }
+.cv-prose p { margin: 0; }
+.cv-prose p + p { margin-top: 16px; }
+.cv-sec-toolkit .cv-item + .cv-item { margin-top: 12px; }
+.cv-sec-toolkit .cv-text { font-size: 15px; }
+.cv-download { margin: 56px 0 0; font-size: 14px; }
+.cv-download a { color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
 /* ---------- post page ---------- */
 .post-page { position: relative; padding: 36px 36px 40px; }
 .menubtn { position: absolute; top: 24px; right: 30px; z-index: 2; }
@@ -235,6 +254,8 @@ a.row:hover .t { text-decoration: underline; text-underline-offset: 4px; text-de
 
 /* ---------- small screens ---------- */
 @media (max-width: 760px) {
+  .cv-item { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
+  .cv-item + .cv-item { margin-top: 24px; }
   .wrap { padding: 24px 22px 64px; gap: 28px; }
   .side { flex-basis: 100%; }
   .menu { margin-top: 18px; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; font-size: 20px; }
