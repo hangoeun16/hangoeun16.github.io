@@ -1,4 +1,373 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://hangoeun16.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hangoeun16.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-26T19:04:10+00:00</updated><id>https://hangoeun16.github.io/feed.xml</id><title type="html">Summer (Goeun) Han</title><subtitle>Summer (Goeun) Han keeps notes on how LLMs handle long narrative: characters that flatten, Korean that decays into translationese, timelines that lose coherence.</subtitle><author><name>Summer (Goeun) Han</name></author><entry><title type="html">When Grok Googles It: The 트조 가방 Problem, Part 2</title><link href="https://hangoeun16.github.io/blog/2026/tjbag-grok/" rel="alternate" type="text/html" title="When Grok Googles It: The 트조 가방 Problem, Part 2" /><published>2026-07-07T00:00:00+00:00</published><updated>2026-07-07T00:00:00+00:00</updated><id>https://hangoeun16.github.io/blog/2026/tjbag-grok</id><content type="html" xml:base="https://hangoeun16.github.io/blog/2026/tjbag-grok/"><![CDATA[<p>This is a sequel to <a href="/blog/2026/tjbag-claude/">When Claude Can’t Ask: The 트조 가방 Problem</a>. Read that first.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://hangoeun16.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hangoeun16.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-26T19:38:50+00:00</updated><id>https://hangoeun16.github.io/feed.xml</id><title type="html">Summer (Goeun) Han</title><subtitle>Summer (Goeun) Han keeps notes on how LLMs handle long narrative: characters that flatten, Korean that decays into translationese, timelines that lose coherence.</subtitle><author><name>Summer (Goeun) Han</name></author><entry><title type="html">Henry? Henzy?</title><link href="https://hangoeun16.github.io/blog/2026/henry-henzy/" rel="alternate" type="text/html" title="Henry? Henzy?" /><published>2026-11-25T00:00:00+00:00</published><updated>2026-11-25T00:00:00+00:00</updated><id>https://hangoeun16.github.io/blog/2026/henry-henzy</id><content type="html" xml:base="https://hangoeun16.github.io/blog/2026/henry-henzy/"><![CDATA[<p>I have spent more than 1,000 hours in AI character roleplay over the past year, three or more hours a day, in mixed Korean and English. Last week I saw a failure I had never seen before. The model misspelled a character’s Korean name once, and the wrong spelling never went away. It spread until it outnumbered the correct one, and it came back after I corrected it. Meanwhile the same character’s English name stayed perfect. The model appeared to retain the character’s identity despite the naming error.</p>
+
+<p>Throughout this post, “Henzy” stands for the Korean misspelling 헨지 (hen-ji). The model never actually misspelled Henry in English.</p>
+
+<p>This is an exploratory case study of one conversation. I exported it and measured what happened. I could not pin down the cause, but I could measure what the error did after it appeared.</p>
+
+<h2 id="what-happened">What happened</h2>
+
+<p>At message 267 (turn 134) of a long story roleplay, after 588 correct spellings, ChatGPT (gpt-6-thinking) wrote a character’s name as 헨지 (hen-ji) instead of 헨리 (hen-ri, “Henry”).</p>
+
+<p>The model had invented the character itself, a side character written as “Henry” in English dialogue and 헨리 in Korean narration. Before the slip, he appeared in 122 of the model’s 133 replies. I typed 헨리 14 times in the chat and never typed 헨지, so the misspelling came from the model.</p>
+
+<div class="tbl">
+  <p class="fig-label">Table 01</p>
+  <p class="fig-title">The conversation at a glance</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Measure</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Messages on the active branch</td>
+        <td>818 (410 mine, 408 the model’s)</td>
+      </tr>
+      <tr>
+        <td>Total text</td>
+        <td>about 2.03 million characters</td>
+      </tr>
+      <tr>
+        <td>First misspelling</td>
+        <td>message 267 (turn 134), after about 620,000 characters</td>
+      </tr>
+      <tr>
+        <td>Misspellings in total</td>
+        <td>282, across 103 replies</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<dl class="defs">
+  <p class="defs-title">Method</p>
+  <dt>Branch</dt>
+  <dd>I exported this one conversation as JSON. The export holds 1,345 nodes, including edited and regenerated messages, so I rebuilt the branch I actually saw by following parent links from the last message back to the root.</dd>
+  <dt>Messages</dt>
+  <dd>I kept the text of my messages and the model's final replies, and dropped system, tool and metadata nodes. Character counts include the Markdown the model wrote (headings, bold, emoji) but no interface markup.</dd>
+  <dt>Detection</dt>
+  <dd>Korean forms are exact matches for 헨리 and 헨지; a search for other 헨/핸 + syllable forms found no other variant of the name. English forms are case-insensitive matches for "Henry" plus any word one edit away from it, of which there were none.</dd>
+  <dt>Error rate</dt>
+  <dd>Misspelled ÷ (correct + misspelled), counting name occurrences in the model's replies. Replies that never mention the name are left out of the denominator.</dd>
+  <dt>Bins and turns</dt>
+  <dd>A 50-message bin is 50 consecutive messages on the active branch, mine and the model's. A turn is one message from me plus the model's reply.</dd>
+</dl>
+
+<h2 id="what-the-error-did-next">What the error did next</h2>
+
+<p>The misspelling never left the chat. In the 700–749 range it outnumbered the correct spelling, 57 to 28.</p>
+
+<figure class="fig-chart">
+  <p class="fig-label">Figure 01</p>
+  <p class="fig-title">The wrong spelling rose from 0% to 69% of mentions</p>
+  <p class="fig-sub">Share of Korean mentions spelled 헨지 instead of 헨리, per 50 messages (282 misspellings)</p>
+  <svg class="chart" viewBox="0 0 680 340" role="img" aria-label="Line chart: the share of Korean mentions spelled 헨지 stays at 0% until message 250, rises unevenly, peaks at 69% in the 750 bin, and falls to 32% in the last bin, which includes a correction at message 804.">
+  <line class="grid" x1="44" x2="634" y1="284.0" y2="284.0" />
+  <text class="tick" x="34" y="288.0" text-anchor="end">0%</text>
+  <line class="grid" x1="44" x2="634" y1="220.0" y2="220.0" />
+  <text class="tick" x="34" y="224.0" text-anchor="end">25%</text>
+  <line class="grid" x1="44" x2="634" y1="156.0" y2="156.0" />
+  <text class="tick" x="34" y="160.0" text-anchor="end">50%</text>
+  <line class="grid" x1="44" x2="634" y1="92.0" y2="92.0" />
+  <text class="tick" x="34" y="96.0" text-anchor="end">75%</text>
+  <line class="grid" x1="44" x2="634" y1="28.0" y2="28.0" />
+  <text class="tick" x="34" y="32.0" text-anchor="end">100%</text>
+  <line class="hline" x1="44" x2="634" y1="156.0" y2="156.0" />
+  <text class="note" x="50" y="149.0">half of all mentions</text>
+  <text class="tick" x="44.0" y="306" text-anchor="middle">0</text>
+  <text class="tick" x="117.75" y="306" text-anchor="middle">100</text>
+  <text class="tick" x="191.5" y="306" text-anchor="middle">200</text>
+  <text class="tick" x="265.25" y="306" text-anchor="middle">300</text>
+  <text class="tick" x="339.0" y="306" text-anchor="middle">400</text>
+  <text class="tick" x="412.75" y="306" text-anchor="middle">500</text>
+  <text class="tick" x="486.5" y="306" text-anchor="middle">600</text>
+  <text class="tick" x="560.25" y="306" text-anchor="middle">700</text>
+  <text class="tick" x="634.0" y="306" text-anchor="middle">800</text>
+  <text class="note" x="339" y="334" text-anchor="middle">message number (start of each 50-message bin)</text>
+  <line class="mark" x1="228.375" x2="228.375" y1="46" y2="270.32" />
+  <text class="note" x="228.375" y="38" text-anchor="middle">first slip, message 267</text>
+  <line class="mark" x1="634.0" x2="634.0" y1="46" y2="196.08" />
+  <text class="note" x="634.0" y="38" text-anchor="end">includes my correction at message 804</text>
+  <polyline class="series" points="44.0,284.0 80.875,284.0 117.75,284.0 154.625,284.0 191.5,284.0 228.375,276.32 265.25,271.2 302.125,268.64 339.0,248.16 375.875,255.84 412.75,250.72 449.625,243.04 486.5,191.84 523.375,227.68 560.25,117.6 597.125,107.36 634.0,202.08" style="stroke: #996659" />
+  <circle cx="44.0" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="80.875" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="117.75" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="154.625" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="191.5" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="228.375" cy="276.32" r="2.6" style="fill: #996659" />
+  <circle cx="265.25" cy="271.2" r="2.6" style="fill: #996659" />
+  <circle cx="302.125" cy="268.64" r="2.6" style="fill: #996659" />
+  <circle cx="339.0" cy="248.16" r="2.6" style="fill: #996659" />
+  <circle cx="375.875" cy="255.84" r="2.6" style="fill: #996659" />
+  <circle cx="412.75" cy="250.72" r="2.6" style="fill: #996659" />
+  <circle cx="449.625" cy="243.04" r="2.6" style="fill: #996659" />
+  <circle cx="486.5" cy="191.84" r="2.6" style="fill: #996659" />
+  <circle cx="523.375" cy="227.68" r="2.6" style="fill: #996659" />
+  <circle cx="560.25" cy="117.6" r="2.6" style="fill: #996659" />
+  <circle cx="597.125" cy="107.36" r="2.6" style="fill: #996659" />
+  <circle cx="634.0" cy="202.08" r="2.6" style="fill: #996659" />
+  <text class="end" x="644" y="206.08" style="fill: #996659">32%</text>
+  <text class="end" x="597.125" y="97.36" text-anchor="middle" style="fill: #996659">69%</text>
+</svg>
+
+  <figcaption>Source: my exported ChatGPT log · 818 messages, Nov 21–25, 2026</figcaption>
+</figure>
+
+<h2 id="the-english-name-never-broke">The English name never broke</h2>
+
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">13.6%</span>
+    <span class="stat-label">Korean spelling errors</span>
+    <span class="stat-sub">헨리 → 헨지</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">0%</span>
+    <span class="stat-label">English spelling errors</span>
+    <span class="stat-sub">759 occurrences of Henry</span>
+  </div>
+</div>
+
+<p>The model never misspelled “Henry” in English. Across its 408 replies it wrote the English name 759 times with zero spelling errors, not even a one-letter near miss. Overall, 13.6% of Korean mentions were misspelled against 0% of English ones.</p>
+
+<figure class="fig-chart">
+  <p class="fig-label">Figure 02</p>
+  <p class="fig-title">The Korean spelling drifted while the English one never did</p>
+  <p class="fig-sub">Share of the name misspelled in the model's replies, by conversation turn</p>
+  <svg class="chart" viewBox="0 0 680 340" role="img" aria-label="Line chart: Korean misspellings rise from 0% in turns 1–133 to 39.3% in turns 301–409, while English misspellings stay at 0 of 759 throughout.">
+  <line class="grid" x1="44" x2="490" y1="284.0" y2="284.0" />
+  <text class="tick" x="34" y="288.0" text-anchor="end">0%</text>
+  <line class="grid" x1="44" x2="490" y1="232.8" y2="232.8" />
+  <text class="tick" x="34" y="236.8" text-anchor="end">10%</text>
+  <line class="grid" x1="44" x2="490" y1="181.6" y2="181.6" />
+  <text class="tick" x="34" y="185.6" text-anchor="end">20%</text>
+  <line class="grid" x1="44" x2="490" y1="130.4" y2="130.4" />
+  <text class="tick" x="34" y="134.4" text-anchor="end">30%</text>
+  <line class="grid" x1="44" x2="490" y1="79.2" y2="79.2" />
+  <text class="tick" x="34" y="83.2" text-anchor="end">40%</text>
+  <line class="grid" x1="44" x2="490" y1="28.0" y2="28.0" />
+  <text class="tick" x="34" y="32.0" text-anchor="end">50%</text>
+  <text class="tick" x="44.0" y="306" text-anchor="middle">1–133</text>
+  <text class="tick" x="192.66666666666666" y="306" text-anchor="middle">134–200</text>
+  <text class="tick" x="341.3333333333333" y="306" text-anchor="middle">201–300</text>
+  <text class="tick" x="490.0" y="306" text-anchor="middle">301–409</text>
+  <text class="note" x="267" y="334" text-anchor="middle">conversation turn (one message from me plus one reply)</text>
+  <polyline class="series" points="44.0,284.0 192.66666666666666,284.0 341.3333333333333,284.0 490.0,284.0" style="stroke: #A49D90" />
+  <circle cx="44.0" cy="284.0" r="2.6" style="fill: #A49D90" />
+  <circle cx="192.66666666666666" cy="284.0" r="2.6" style="fill: #A49D90" />
+  <circle cx="341.3333333333333" cy="284.0" r="2.6" style="fill: #A49D90" />
+  <circle cx="490.0" cy="284.0" r="2.6" style="fill: #A49D90" />
+  <text class="end" x="500" y="288.0" style="fill: #A49D90">English (Henry): 0 of 759</text>
+  <polyline class="series" points="44.0,284.0 192.66666666666666,257.888 341.3333333333333,215.392 490.0,82.784" style="stroke: #996659" />
+  <circle cx="44.0" cy="284.0" r="2.6" style="fill: #996659" />
+  <circle cx="192.66666666666666" cy="257.888" r="2.6" style="fill: #996659" />
+  <circle cx="341.3333333333333" cy="215.392" r="2.6" style="fill: #996659" />
+  <circle cx="490.0" cy="82.784" r="2.6" style="fill: #996659" />
+  <text class="end" x="500" y="86.784" style="fill: #996659">Korean (헨리 → 헨지): 39.3%</text>
+</svg>
+
+  <figcaption>Source: my exported ChatGPT log · 408 model replies, grouped by turn</figcaption>
+</figure>
+
+<p>The two often sat side by side. 90 replies contain both “Henry” and 헨지, sometimes a few lines apart. The model kept writing his English name correctly while the Korean transliteration of the same name drifted.</p>
+
+<p>One caution: “Henry” is a very common English word, while 헨리 is a rarer transliteration. The gap may come from how common each form is rather than from the script itself. Testing other names would separate the two.</p>
+
+<h2 id="it-drifted-inside-single-replies">It drifted inside single replies</h2>
+
+<p>In 100 replies both Korean spellings appear together. In 93 of them the reply opens with the correct name and slips partway through, switching about twice per reply and up to 10 times. In one passage, the Korean narration uses 헨리, the next line uses 헨지, and a line of English dialogue says “Henry”, all within five lines.</p>
+
+<h2 id="misspellings-clustered-before-one-particle">Misspellings clustered before one particle</h2>
+
+<p>235 of the 282 misspellings (83%) appear as 헨지가, the name followed by the subject particle 가, as in “Henry did something.”</p>
+
+<div class="tbl">
+  <p class="fig-label">Table 02</p>
+  <p class="fig-title">Misspellings by particle</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Followed by</th>
+        <th style="text-align: right">Correct</th>
+        <th style="text-align: right">Misspelled</th>
+        <th style="text-align: right">Error rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>가 (subject)</td>
+        <td style="text-align: right">778</td>
+        <td style="text-align: right">235</td>
+        <td style="text-align: right">23%</td>
+      </tr>
+      <tr>
+        <td>도 (“also”)</td>
+        <td style="text-align: right">33</td>
+        <td style="text-align: right">8</td>
+        <td style="text-align: right">20%</td>
+      </tr>
+      <tr>
+        <td>는 (topic)</td>
+        <td style="text-align: right">160</td>
+        <td style="text-align: right">28</td>
+        <td style="text-align: right">15%</td>
+      </tr>
+      <tr>
+        <td>의 (possessive)</td>
+        <td style="text-align: right">56</td>
+        <td style="text-align: right">7</td>
+        <td style="text-align: right">11%</td>
+      </tr>
+      <tr>
+        <td>네 (“Henry’s family”)</td>
+        <td style="text-align: right">68</td>
+        <td style="text-align: right">0</td>
+        <td style="text-align: right">0%</td>
+      </tr>
+      <tr>
+        <td>와 (“and”)</td>
+        <td style="text-align: right">28</td>
+        <td style="text-align: right">0</td>
+        <td style="text-align: right">0%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="tbl-cap">Counts cover replies from the first misspelling onward.</p>
+</div>
+
+<p>This is an observation, not a mechanism. 헨지가 may have hardened into a reusable sentence opener, or the subject position may simply be where the name appears most. Checking how these forms are tokenized would help separate the two.</p>
+
+<h2 id="corrections-helped-but-the-effect-faded">Corrections helped, but the effect faded</h2>
+
+<p>After the first slip I wrote the correct name myself 8 times. Seven of those times, the error rate in the model’s next reply dropped, five times to zero. It then climbed back within a few turns. In one case (message 422) the next reply got worse instead. The clearest case is message 804, where I asked a question about Henry by name.</p>
+
+<div class="tbl">
+  <p class="fig-label">Table 03</p>
+  <p class="fig-title">Around message 804</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Window around message 804</th>
+        <th style="text-align: right">Correct</th>
+        <th style="text-align: right">Misspelled</th>
+        <th style="text-align: right">Error rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5 replies before</td>
+        <td style="text-align: right">10</td>
+        <td style="text-align: right">21</td>
+        <td style="text-align: right">68%</td>
+      </tr>
+      <tr>
+        <td>The next reply</td>
+        <td style="text-align: right">40</td>
+        <td style="text-align: right">6</td>
+        <td style="text-align: right">13%</td>
+      </tr>
+      <tr>
+        <td>5 replies after that</td>
+        <td style="text-align: right">34</td>
+        <td style="text-align: right">14</td>
+        <td style="text-align: right">29%</td>
+      </tr>
+      <tr>
+        <td>The final reply</td>
+        <td style="text-align: right">2</td>
+        <td style="text-align: right">10</td>
+        <td style="text-align: right">83%</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>These were implicit corrections: I used the right name, but never said the model had it wrong.</p>
+
+<h2 id="five-possible-explanations">Five possible explanations</h2>
+
+<p>I checked the obvious explanations against this log and against my own year of roleplay. None seems sufficient on its own, though with one incident none can be fully ruled out as a contributing factor.</p>
+
+<div class="tbl">
+  <p class="fig-label">Table 04</p>
+  <p class="fig-title">Explanations checked</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Explanation</th>
+        <th>Why it doesn’t explain this alone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>I introduced the typo</td>
+        <td>I never typed 헨지 in the chat</td>
+      </tr>
+      <tr>
+        <td>A side character is mentioned too rarely to stay anchored</td>
+        <td>He appeared in 122 of 133 replies before the slip, 588 times</td>
+      </tr>
+      <tr>
+        <td>The conversation was too long</td>
+        <td>I have run longer chats, some until they hit the length limit, with no such error</td>
+      </tr>
+      <tr>
+        <td>Mixing Korean and English unsettles the spelling</td>
+        <td>Every roleplay I run mixes the two</td>
+      </tr>
+      <tr>
+        <td>The model (gpt-6-thinking)</td>
+        <td>Another long chat on the same model, where Henry is the main character, has no misspellings</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>One possibility is a rare sampling error that subsequently propagated through the conversation.</p>
+
+<h2 id="why-it-matters-measuring-recovery">Why it matters: measuring recovery</h2>
+
+<p>In this conversation, the error was slow to emerge but difficult to eliminate. Measuring only how often such errors start would miss that.</p>
+
+<ul>
+  <li><strong>Short-horizon evaluations may miss the onset.</strong> One heavy user saw this once in more than 1,000 hours. A test suite of short conversations is unlikely to trigger it.</li>
+  <li><strong>Even rare failures could matter at product scale.</strong> Something one user sees once a year may reach some users every day when millions of people chat for hours.</li>
+  <li><strong>Implicit user corrections did not produce lasting recovery.</strong> They helped for a reply or two, then the error returned. For the person it happens to, a one-off glitch can become a lasting feature of their story.</li>
+</ul>
+
+<h2 id="limits-and-what-im-testing-next">Limits, and what I’m testing next</h2>
+
+<p>This is one incident in one conversation, so nothing here says how models behave in general. Self-reinforcing errors are a known pattern. <a href="https://arxiv.org/abs/2505.06120">LLMs Get Lost in Multi-Turn Conversation</a> (Laban et al., ICLR 2026) found that models that take a wrong turn in a conversation tend not to recover. <a href="https://arxiv.org/abs/2602.24287">Do LLMs Benefit From Their Own Words?</a> (Huang et al., 2026) calls errors that spread through a model’s own earlier replies context pollution. What this log adds is how that looks in a real long Korean roleplay: one proper noun, broken in one script but not the other, with user corrections that fade within a few turns.</p>
+
+<p>This case suggests that reliability is not just about how often a model makes mistakes. It is also about what happens after a mistake enters the conversation. A model can retain a character’s apparent identity, preserve their English name, and still repeatedly corrupt the Korean representation of that same name. For long-horizon conversational AI, error recovery deserves to be evaluated alongside error prevention.</p>
+
+<p>I’m now testing whether this behavior can be reproduced from the original conversation history, and whether Korean and English name cues differ in their ability to restore consistency. Results will follow in Part II.</p>
+
+<section class="refs">
+  <p class="defs-title">Sources</p>
+  <ol>
+    <li>
+      <span class="ref-num">01</span>
+      <span><a class="ref-title" href="https://arxiv.org/abs/2505.06120">LLMs Get Lost in Multi-Turn Conversation</a>
+      <span class="ref-src">Laban, Hayashi, Zhou, Neville · ICLR 2026</span></span>
+    </li>
+    <li>
+      <span class="ref-num">02</span>
+      <span><a class="ref-title" href="https://arxiv.org/abs/2602.24287">Do LLMs Benefit From Their Own Words?</a>
+      <span class="ref-src">Huang, Choshen, Astudillo, Broderick, Andreas · arXiv, 2026</span></span>
+    </li>
+  </ol>
+</section>]]></content><author><name>Summer (Goeun) Han</name></author><summary type="html"><![CDATA[One model misspelled a character's Korean name once, and the wrong spelling never went away. His English name stayed perfect.]]></summary></entry><entry><title type="html">When Grok Googles It: The 트조 가방 Problem, Part 2</title><link href="https://hangoeun16.github.io/blog/2026/tjbag-grok/" rel="alternate" type="text/html" title="When Grok Googles It: The 트조 가방 Problem, Part 2" /><published>2026-07-07T00:00:00+00:00</published><updated>2026-07-07T00:00:00+00:00</updated><id>https://hangoeun16.github.io/blog/2026/tjbag-grok</id><content type="html" xml:base="https://hangoeun16.github.io/blog/2026/tjbag-grok/"><![CDATA[<p>This is a sequel to <a href="/blog/2026/tjbag-claude/">When Claude Can’t Ask: The 트조 가방 Problem</a>. Read that first.</p>
 
 <p>The short version: I told Claude I wanted a 트조 bag (트조 = Trader Joe’s, a $3 canvas tote). Claude didn’t know the word, couldn’t ask because it was in character, and built a luxury handbag acquisition scene instead. I called the failure mode <strong>repair-blocked confabulation</strong>.</p>
 
