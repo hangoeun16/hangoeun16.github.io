@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAF8EF">
+<link rel="preload" href="/assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=1795753188">
+<link type="application/atom+xml" rel="alternate" href="https://hangoeun16.github.io/feed.xml" title="Summer (Goeun) Han" />
+<!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Extracting Family Trees from Literary Texts | Summer (Goeun) Han</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Extracting Family Trees from Literary Texts" />
+<meta name="author" content="Summer (Goeun) Han" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Why &amp; How I Found This For my final project in MPCS 57200 Generative AI, I built a knowledge graph-based chatbot that automatically creates family trees from the information from chat. Even after the quarter ended, I remained curious about effective ways to generate family trees from text. I found this paper by searching “family tree nlp” in google; it appeared at the top. Two things caught my attention: first, it was also a final project, and second, it was written in 2015. I wanted to see how their approach compares to modern techniques and whether any aspects remain relevant…" />
+<meta name="twitter:description" property="og:description" content="Why &amp; How I Found This For my final project in MPCS 57200 Generative AI, I built a knowledge graph-based chatbot that automatically creates family trees from the information from chat. Even after the quarter ended, I remained curious about effective ways to generate family trees from text. I found this paper by searching “family tree nlp” in google; it appeared at the top. Two things caught my attention: first, it was also a final project, and second, it was written in 2015. I wanted to see how their approach compares to modern techniques and whether any aspects remain relevant…" />
+<link rel="canonical" href="https://hangoeun16.github.io/blog/2025/extracting_family_trees_from_literary_texts/" />
+<meta property="og:url" content="https://hangoeun16.github.io/blog/2025/extracting_family_trees_from_literary_texts/" />
+<meta property="og:site_name" content="Summer (Goeun) Han" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-12-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Extracting Family Trees from Literary Texts" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Summer (Goeun) Han"},"dateModified":"2025-12-12T00:00:00+00:00","datePublished":"2025-12-12T00:00:00+00:00","description":"Why \u0026amp; How I Found This For my final project in MPCS 57200 Generative AI, I built a knowledge graph-based chatbot that automatically creates family trees from the information from chat. Even after the quarter ended, I remained curious about effective ways to generate family trees from text. I found this paper by searching “family tree nlp” in google; it appeared at the top. Two things caught my attention: first, it was also a final project, and second, it was written in 2015. I wanted to see how their approach compares to modern techniques and whether any aspects remain relevant…","headline":"Extracting Family Trees from Literary Texts","mainEntityOfPage":{"@type":"WebPage","@id":"https://hangoeun16.github.io/blog/2025/extracting_family_trees_from_literary_texts/"},"url":"https://hangoeun16.github.io/blog/2025/extracting_family_trees_from_literary_texts/"}</script>
+<!-- End Jekyll SEO tag -->
+
+<script>window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="post-page" id="top"><details class="menubtn">
+  <summary aria-label="Menu">≡</summary>
+  <nav aria-label="Main">
+    <a href="/">about</a>
+    <a href="/studio/">studio</a>
+    <a href="/blog/">writing</a>
+    <a class="sub first" href="/cv/">cv</a>
+    <span class="icons menu-icons">
+  <a href="mailto:han.goeun16@gmail.com" aria-label="Email">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/goeun-summer-han/" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://github.com/hangoeun16" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+  </a>
+</span>
+
+  </nav>
+</details>
+
+<div class="post-wrap">
+  <aside class="post-side">
+    <a class="name" href="/">Summer (Goeun) Han</a>
+    <p class="kind">December 12, 2025, note</p>
+  </aside>
+
+  <article class="post">
+    <h1>Extracting Family Trees from Literary Texts</h1>
+    <p class="doc-src">Alex Chin, Evan Patterson · Stanford CS224N final project report · 2015<br><a href="https://nlp.stanford.edu/courses/cs224n/2015/reports/30.pdf">Original source ↗</a></p>
+    <div class="prose">
+      <h3 id="why--how-i-found-this">Why &amp; How I Found This</h3>
+<p>For my final project in MPCS 57200 Generative AI, I built a knowledge graph-based chatbot that automatically creates family trees from the information from chat. Even after the quarter ended, I remained curious about effective ways to generate family trees from text. I found this paper by searching “family tree nlp” in google; it appeared at the top. Two things caught my attention: first, it was also a final project, and second, it was written in 2015. I wanted to see how their approach compares to modern techniques and whether any aspects remain relevant today.</p>
+
+<h3 id="interesting-idea">Interesting Idea</h3>
+
+<h4 id="1-incorporating-sentiment-into-weight-2-related-work">1. Incorporating Sentiment into Weight (2. Related work)</h4>
+<p>While an unhierarchical family tree is commonly represented as an undirected graph, <a href="https://aclanthology.org/W12-4102.pdf">the work</a> done by Ahmed Hassan, Amjad Abu-Jbara, and Dragomir Radev defines a conversational network through an undirected graph where vertices are characters and edges are conversations between the two characters. Specifically, while the weight on the edge increases along with the amount of conversation, when positive interactions between two characters are detected, the researchers assign positive weight to the edges. I wonder how this method could differentiate between a change in relationship (love to hate, which would end up with a weight around 0) and an initially indifferent conversation (around 0 throughout the text).</p>
+
+<h4 id="2-using-corenlp-for-ner-31-identifying-characters">2. Using CoreNLP for NER (3.1. Identifying characters)</h4>
+<p>The researchers used Stanford CoreNLP for identifying characters and then matched the names by the set pattern. The patterns that it accepts are:</p>
+
+<ol>
+  <li>{honorific} {first} {middle} {last}</li>
+  <li>{honorific} {first} {last}</li>
+  <li>{honorific} {last}</li>
+  <li>{first} {middle} {last}</li>
+  <li>{first} {last}</li>
+  <li>{first $\mid$ last} (ambiguous)</li>
+</ol>
+
+<p>I understand that these patterns derive from the fact that the researchers were dealing with literary texts mostly from classics, such as $\textit{Wuthering Heights}$ and $\textit{Romeo and Juliet}$. Since this pattern seems to work best with that type of literature, it may not be easily applicable to other types of literature. Apparently, this was written more than 10 years ago, but I wonder whether using prompt engineering in this case would have worked better.</p>
+
+<h4 id="3-symmetry-in-relationship-321-extensions">3. Symmetry in Relationship (3.2.1. Extensions)</h4>
+<p>One of the potential enhancements introduced in this paper is identifying symmetric relationships. A symmetric relationship is a relationship R such that for arbitrary $a,b \in V, aRb \Rightarrow  bRa$. Actual examples are siblings and cousins. For instance, if A is a sibling of B, then B is also a sibling of A. While doing my project, I also thought identifying symmetric relationships could be helpful. Since my project’s family tree was a directed graph $G = (V,E)$ where V represents each person and E represents a relationship between two people, identifying a symmetric relationship between two vertices would allow for one directional edge instead of two because $(v_1​,v_2​)$ and $(v_2,v_1)$ would be the same. However, I did not end up implementing a step to detect symmetric relationships because I had Korean family relationships in mind, and most Western symmetric relationships are not symmetric in Korea. For instance, when referring to a cousin, Koreans usually include words that identify gender and age. So, while it could be helpful in a Western family context, it might not be compatible with Korean family relationships. However, I think that using symmetric relationships and then adding attribute comparisons in each node, which might include age and gender, could be an efficient approach.</p>
+
+<h3 id="concepts-to-revisit-computational-ccomplexity">Concepts to Revisit: Computational Ccomplexity</h3>
+<p>The paper claims that strong compatibility is  an equivalence relation, and it takes $O(nk)$ strong compatibility checks where $n$ is the number of chains and $k$ is the number of equivalence classes.</p>
+
+<h3 id="future-plan">Future Plan</h3>
+<ol>
+  <li>Read <a href="https://aclanthology.org/W12-4102.pdf">Extracting Signed Social Networks From Text</a></li>
+  <li>Read <a href="https://stanfordnlp.github.io/CoreNLP/">Stanford CoreNLP package</a>, focusing on ner and deterministic coreference resolver, and see how it deals with place holder</li>
+</ol>
+
+
+    </div>
+    <p class="colophon">Originally published December 12, 2025.</p>
+  </article>
+</div>
+
+<section class="related">
+  <h2>related</h2>
+  <div class="cards"><a class="card" href="/blog/2026/henry-henzy/"><span class="card-text"><span>One model misspelled a character's Korean name once, and the wrong spelling never went away. His English name stayed perfect.</span></span><span class="card-title">Henry? Henzy?</span>
+          <span class="card-sub">November 2026</span>
+        </a><a class="card" href="/blog/2026/tjbag-grok/"><span class="card-text"><span>Grok searched the web, correctly identified Trader Joe's, and still didn't ask the user which bag they meant. The character just bought all of them.</span></span><span class="card-title">When Grok Googles It: The 트조 가방 Problem, Part 2</span>
+          <span class="card-sub">July 2026, character drift</span>
+        </a><a class="card" href="/blog/2026/tjbag-claude/"><span class="card-text"><span>I told Claude I wanted a 트조 bag. It didn't know the word — but couldn't ask, because it was in character. What happened next reveals how narrative constraints turn comprehension failures into confident worldbuilding.</span></span><span class="card-title">When Claude Can't Ask: The 트조 가방 Problem</span>
+          <span class="card-sub">June 2026, character drift</span>
+        </a></div>
+</section>
+
+<footer class="foot">
+  <span>© 2026 Summer (Goeun) Han</span>
+  <a href="#top" aria-label="Back to top">↑</a>
+</footer>
+
+</div>
+
+</body>
+</html>
