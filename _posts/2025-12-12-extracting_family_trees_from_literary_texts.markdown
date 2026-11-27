@@ -1,10 +1,9 @@
 ---
-layout: lit_review
 title: "Extracting Family Trees from Literary Texts"
 giscus_comments: true
 date: 2025-12-12
 bib_id: chin2015extracting
-library_type: paper
+math: true
 authors: "Alex Chin, Evan Patterson"
 source: "Stanford CS224N final project report"
 pub_year: "2015"

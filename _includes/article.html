@@ -5,7 +5,6 @@
     <a href="{{ '/' | relative_url }}">about</a>
     <a href="{{ '/studio/' | relative_url }}">studio</a>
     <a href="{{ '/blog/' | relative_url }}">writing</a>
-    <a href="{{ '/library/' | relative_url }}">library</a>
     <a class="sub first" href="{{ '/cv/' | relative_url }}">cv</a>
     {% include social-icons.html class="menu-icons" %}
   </nav>
@@ -22,7 +21,7 @@
   <article class="post">
     <h1>{{ page.title }}</h1>
     {%- if page.deck %}<p class="deck">{{ page.deck }}</p>{% endif %}
-    {%- if page.collection == "lit_review" or page.collection == "courses" -%}
+    {%- if page.collection == "lit_review" or page.collection == "courses" or page.source_url -%}
       {%- assign lc = site.data.library.courses | where: "code", page.course | first -%}
       {%- capture src -%}{% if page.authors or page.source %}{{ page.authors }}{% if page.source %}{% if page.authors %} · {% endif %}{{ page.source }}{% endif %}{% if page.pub_year %} · {{ page.pub_year }}{% endif %}{% elsif lc %}{{ lc.name }} · {{ lc.source }}{% endif %}{%- endcapture -%}
       {%- assign orig = page.source_url | default: lc.url -%}

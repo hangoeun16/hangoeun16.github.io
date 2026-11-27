@@ -13,7 +13,6 @@
     <a href="{{ '/' | relative_url }}"{% if on_about %} class="on" aria-current="page"{% endif %}>about</a>
     <a href="{{ '/studio/' | relative_url }}"{% if on_studio %} class="on" aria-current="page"{% endif %}>studio</a>
     <a href="{{ '/blog/' | relative_url }}"{% if on_writing %} class="on" aria-current="page"{% endif %}>writing</a>
-    <a href="{{ '/library/' | relative_url }}"{% if on_library %} class="on" aria-current="page"{% endif %}>library</a>
     <a class="sub first{% if on_cv %} on{% endif %}" href="{{ '/cv/' | relative_url }}"{% if on_cv %} aria-current="page"{% endif %}>cv</a>
   </nav>
   {% include social-icons.html class="side-icons" %}
